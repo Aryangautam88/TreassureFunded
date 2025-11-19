@@ -1,0 +1,352 @@
+/* -------------------- Desktop Styles -------------------- */
+
+.first-fullpage {
+  background-color: #000;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  padding-top:200px ;
+}
+
+.coin-side-div {
+  /* height: 76vh;
+  width: 40vw; */
+  margin-right: 55%;
+  margin-top: 12%;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.box-side-div {
+  height: auto;
+  width: 62vw;
+  position: absolute;
+  right: 0;
+  top: 39%;
+  transform: translateY(-50%);
+  /* animation: zoomIn 1.5s ease-in-out; */
+  left: 45%;
+}
+
+.under-box-main-div1,
+.under-box-main-div2,
+.under-box-main-div3,
+.under-box-main-div4 {
+  background-color: #111;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  height: auto;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.under-box-main-div1:hover,
+.under-box-main-div2:hover,
+.under-box-main-div3:hover,
+.under-box-main-div4:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.Key-highlight {
+  background-color: #000;
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 50px;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  margin-left: 30px;
+  text-align: center;
+}
+
+.gradient-text-div {
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-left: 30px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.box-main-div1,
+.box-main-div2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.e1,
+.e2,
+.e3 {
+  height: 6vh;
+  width: 4vw;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: goldenrod;
+}
+
+.head-p1 {
+  color: #ffd700;
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.head-paragraph {
+  color: #ccc;
+  margin: 20px 5px 0 10px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.down-side-div {
+  width: 0vw;
+  display: none;
+  margin-top: 5%;
+  animation: fade-in-left 1s ease-in;
+  position: absolute;
+  top: 65%;
+  left: 2%;
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.how-it-works {
+  background-color: #000;
+  color: #ffd700;
+  width: fit-content;
+  height: 35px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: 2px solid #ffd700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+
+.how-it-works-text {
+  margin-top: 90px;
+  margin-left: 30px;
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  font-weight: 00;
+  font-size: 2.5rem;
+  font-family: 'sans-serif';
+}
+
+.start-a-challenge {
+  background-color: #000;
+  height: 5vh;
+  width: 13vw;
+  /* font-size: 2rem; */
+  color: #ffd700;
+  position: absolute;
+  top: 40%;
+  right: -45%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #ffd700;
+  font-weight: 600;
+}
+
+.start-a-challenge:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.arrow:hover {
+  transform: scale(1.2);
+}
+
+/* -------------------- Mobile Responsive -------------------- */
+
+@media screen and (max-width: 768px) {
+  .first-fullpage {
+    padding: 20px 10px;
+    height: auto;
+  }
+
+  .coin-side-div {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .box-side-div {
+    position: static;
+    width: 100%;
+    transform: none;
+    margin-top: 30px;
+    left: unset;
+  }
+
+  .gradient-text-div {
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
+    margin: 30px auto;
+    padding: 0 10px;
+  }
+
+  .Key-highlight {
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin: 20px auto 10px auto;
+    text-align: center;
+  }
+
+  .box-main-div1,
+  .box-main-div2 {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    gap: 25px;
+  }
+
+  .under-box-main-div1,
+  .under-box-main-div2,
+  .under-box-main-div3,
+  .under-box-main-div4 {
+    width: 95%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .e1,
+  .e2,
+  .e3 {
+    width: 40px;
+    height: auto;
+    margin: 10px auto 0 auto;
+    display: block;
+  }
+
+  .head-p1 {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .head-paragraph {
+    font-size: 0.95rem;
+    margin: 10px 0 0 0;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .down-side-div {
+    position: static;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .how-it-works {
+    width: 80%;
+    font-size: 1rem;
+    margin: 20px auto 0 auto;
+  }
+
+  .how-it-works-text {
+    font-size: 2rem;
+    margin: 30px auto;
+    text-align: center;
+    width: 90%;
+  }
+
+  .start-a-challenge {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 1rem;
+    padding: 12px;
+    position: static;
+  }
+}
+/* -------------------- Disable Scrollbar -------------------- */
+
+
+.rotating-video {
+  width: 40vw;   
+  height: 50vh;
+ 
+     
+  
+}
+
+/* Animation keyframes */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 768px) {
+  .rotating-video {
+    width: 60vw;   
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rotating-video {
+    width: 80vw;   
+    height: 30vh;
+    margin-left: 30px;
+  }
+}
+

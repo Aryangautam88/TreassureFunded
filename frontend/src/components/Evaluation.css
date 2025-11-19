@@ -1,0 +1,248 @@
+.evaluation-main {
+    background-color: #0b0b0b;
+    width: 100vw;
+    min-height: 300vh;
+    color: #fff;
+    /* border: 2px solid white; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.evaluation {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: row;
+    gap: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: 2px solid white; */
+    height: 80vh;
+}
+
+/* Left side content */
+.eva-1 {
+    width: 50vw;
+    min-height: 75vh;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* text-align: start; */
+    /* background-color: #1a1a1a; */
+    border-radius: 15px;
+    padding:20px;
+    transition: transform 0.3s ease;
+}
+
+
+/* Headings */
+.eva1-head {
+    background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+    margin-left: 2%;
+    margin-top: 25%;
+}
+
+/* Paragraph and bars */
+.eva1-pra,
+.eva1-bars {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+/* Button */
+.eva1-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 5vh;
+    width: 15vw;
+    border-radius: 25px;
+    color: black;
+    background-color: gold;
+    margin: 6% 30px 0 0px;
+    font-size: 1rem;
+    font-weight: bolder;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.eva1-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Right side image/video */
+.eva-2 {
+    width: 40vw;
+    height: 95vh; /* fixed height for desktop */
+    margin: 0; /* remove extra top margin */
+    overflow: hidden;
+    position: relative;
+    right: 0%;
+    border-radius: 15px;
+    padding: 0; /* remove inner padding for image/video */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: zoomIn 1.2s ease-in-out forwards;
+    transform: scale(0.8);
+    opacity: 0;
+    margin-top: 80px;
+    /* border: 2px solid white; */
+    margin-top: 8%;
+}
+
+.eva-2 img, .eva-2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures full coverage without distortion */
+    display: block;
+}
+
+/* Responsive: tablets */
+@media (max-width: 1024px) {
+    .eva-2 {
+        width: 90vw;
+        height: auto; /* auto height for natural scaling */
+        margin: 20px auto; /* center */
+        right: 0;
+        transform: none !important;
+        opacity: 1 !important;
+        border-radius: 15px;
+    }
+
+    .eva-2 img, .eva-2 video {
+        height: auto;
+        max-width: 100%;
+        object-fit: contain; /* fit inside container */
+    }
+}
+
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Evaluation main heading */
+.evaluation-main-2 {
+    background-color: rgb(18, 18, 18);
+}
+
+.evaluation-main-head {
+    background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+    margin-top: 12%;
+    text-align: center;
+}
+
+.evaluation-main-para {
+    font-size: 1.2rem;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Responsive: tablets */
+@media (max-width: 1024px) {
+    .evaluation {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .eva-1, .eva-2 {
+        width: 90vw;
+        height: auto;
+        margin: 0 auto;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .eva1-head {
+        font-size: 2.5rem;
+        margin-left: 0;
+        margin-top: 15%;
+        text-align: center;
+    }
+
+    .eva1-pra, .eva1-bars {
+        margin: 0 10px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .eva1-button {
+        width: 70vw;
+        height: 45px;
+        margin: 20px auto 0;
+    }
+}
+
+/* Responsive: phones */
+@media (max-width: 480px) {
+    .eva-1, .eva-2 {
+        width: 95vw;
+        padding: 20px;
+        margin: 15px auto;
+    }
+    .eva-1{
+        gap: 25px;
+       
+    }
+
+    .eva1-head {
+        font-size: 1.8rem;
+        margin-top: 8%;
+    }
+
+    .eva1-pra, .eva1-bars {
+        font-size: 0.9rem;
+        margin: 10px 5px;
+    }
+
+    .eva1-button {
+        margin-right:50px ;
+        width: 60vw;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .eva-2 {
+        width: 95vw;
+        height: auto;
+        margin: 15px auto;
+        right: 0;
+        transform: none !important;
+        opacity: 1 !important;
+        border-radius: 10px;
+    }
+
+    .eva-2 img, .eva-2 video {
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+.big-box-div-1-1,
+.big-box-div-1-2,
+.big-box-div-1-3,
+.big-boxes-div2-1,
+.big-boxes-div2-2,
+.big-boxes-div2-3{
+    height: 300px;
+}

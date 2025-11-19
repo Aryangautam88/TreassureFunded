@@ -1,0 +1,223 @@
+/* AdminWithdrawlsPage.css */
+
+/* General Page Styles */
+.withdrawals-page {
+  background-color: #000; /* black background */
+  color: #FFD700; /* gold text */
+  font-family: 'Arial', sans-serif;
+  padding: 30px 15px; /* more padding for breathing room */
+  min-height: 100vh;
+}
+
+/* Headings */
+.withdrawals-page h2, .withdrawals-page h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Withdrawal Cards Container */
+.withdrawals-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+/* Individual Card */
+.withdrawal-card {
+  background-color: #111; /* slightly darker for depth */
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  width: 260px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.withdrawal-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Card Header */
+.withdrawal-card-header {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Card Body */
+.withdrawal-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* spacing between icon and info */
+}
+
+.withdrawal-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.withdrawal-info {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 1.6; /* more spacing for readability */
+}
+
+/* Request Button */
+.request-btn {
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  /* padding: 10px 15px; */
+  margin-top: 35px;
+  cursor: pointer;
+  /* font-weight: bold; */
+  height: 8vh;
+  font-size: small;
+  transition: background 0.3s, transform 0.2s;
+}
+.request-btn1{
+   background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  /* padding: 10px 15px; */
+  margin-top: 35px;
+  cursor: pointer;
+  /* font-weight: bold; */
+  height: 6vh;
+  font-size: small;
+  margin-top: 40px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.request-btn:hover {
+  background-color: #e6c200;
+  transform: translateY(-2px);
+}
+
+.inputt{
+  height: 4vh;
+}
+/* Withdrawal Form Section */
+.withdrawal-form-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.withdrawal-form {
+  background-color: #111;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* better spacing between inputs and buttons */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.withdrawal-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #FFD700;
+  border-radius: 6px;
+  background-color: #000;
+  color: #FFD700;
+  font-size: 0.95rem;
+}
+
+.withdrawal-form input::placeholder {
+  color: #FFD700AA; /* softer gold for placeholder */
+}
+
+.withdrawal-form button {
+  width: 100%;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.withdrawal-form button:hover {
+  background-color: #e6c200;
+  transform: translateY(-2px);
+}
+
+/* OTP section inputs */
+.withdrawal-form .otp-section {
+  display: flex;
+  gap: 10px;
+}
+
+.withdrawal-form .otp-section input {
+  flex: 2;
+}
+
+.withdrawal-form .otp-section button {
+  flex: 1;
+}
+
+/* Responsive Mobile View */
+@media (max-width: 600px) {
+  .withdrawals-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .withdrawal-card {
+    width: 90%;
+  }
+
+  .withdrawal-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .withdrawal-form .otp-section {
+    flex-direction: column;
+  }
+
+  .withdrawal-form .otp-section button {
+    width: 100%;
+  }
+}
+.inputt{
+height: 8vh;
+margin-top: 35px;
+}
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFD700; /* gold */
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px) translateX(-50%); }
+  10% { opacity: 1; transform: translateY(0) translateX(-50%); }
+  90% { opacity: 1; transform: translateY(0) translateX(-50%); }
+  100% { opacity: 0; transform: translateY(-20px) translateX(-50%); }
+}

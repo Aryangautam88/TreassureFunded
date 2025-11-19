@@ -1,0 +1,170 @@
+/* Container */
+.approval-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background: #000; /* black background */
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); /* soft golden glow */
+  font-family: "Segoe UI", sans-serif;
+  color: #FFD700; /* gold text */
+}
+
+/* Header */
+.approval-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 1px solid #FFD70033;
+  padding-bottom: 15px;
+}
+
+.approval-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #FFD700;
+  margin: 0;
+}
+
+/* Filters */
+.approval-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.approval-filters button {
+  padding: 8px 18px;
+  background: #1a1a1a; /* dark card-like button */
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.approval-filters button:hover {
+  background: #FFD700;
+  color: #000;
+}
+
+.approval-filters .active {
+  background: #FFD700;
+  color: #000;
+  border: 1px solid #FFD700;
+}
+
+/* Approval List */
+.approval-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual Card */
+.approval-card {
+  padding: 18px 22px;
+  background: #1a1a1a;
+  border-left: 6px solid transparent;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.approval-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.5);
+}
+
+/* Card Status */
+.approval-card.approved {
+  border-left-color: #28a745;
+  background: #0d2f0d;
+}
+
+.approval-card.declined {
+  border-left-color: #dc3545;
+  background: #2d0d0d;
+}
+
+/* Card Info */
+.approval-info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.approval-info p {
+  font-size: 0.95rem;
+  margin: 2px 0;
+}
+
+/* Card Actions */
+.approval-actions button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-approve {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-approve:hover {
+  background: #1e7e34;
+}
+
+.btn-decline {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-decline:hover {
+  background: #a71d2a;
+}
+
+/* No approvals message */
+.no-approvals {
+  text-align: center;
+  font-size: 1rem;
+  color: #FFD700;
+  padding: 50px 0;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .approval-container {
+    padding: 20px;
+  }
+
+  .approval-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .approval-actions {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .approval-header h2 {
+    font-size: 1.7rem;
+  }
+}

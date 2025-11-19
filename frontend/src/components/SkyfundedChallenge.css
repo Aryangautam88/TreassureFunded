@@ -1,0 +1,403 @@
+.skyfunded-challenge-container {
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  /* border: 2px solid white; */
+}
+.mobile{
+  height: 80vh;
+  width: 30vw;
+  margin-top: 10%;
+  margin-left: 80px;
+}
+
+.challege-video-div1 {
+  background-color: transparent;
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 0%;
+  height: 70vh;
+}
+
+.challenge-div {
+  height: 90vh;
+  width: 50vw;
+  margin-top: 8%;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sky-funded-button-div {
+  height: 7vh;
+  width: 22vw;
+  background-color: #1c1c1c;
+  border: 2px solid #ffd700;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #ffd700;
+  border-radius: 30px;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
+.challenge-div-1 {
+ background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  margin-left: 15px;
+  margin-top: 35px;
+}
+
+.challenge-div-2 {
+  margin-left: 15px;
+  margin-top: 35px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.bar-divs {
+  color: #ffd700;
+  gap: 20%;
+  font-size: 1rem;
+  margin-top: 35px;
+  margin-left: 15px;
+}
+
+.bar-divs span {
+  margin-right: 5%;
+}
+
+.sign-up-now1 {
+  background-color: #ffd700;
+  height: 5vh;
+  width: 15vw;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+  margin-top: 35px;
+  margin-left: 15px;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ---------------------- Model Section ---------------------- */
+
+.Model-div {
+  background-color: #000;
+  height: 145vh;
+  margin-top: -100px;
+}
+
+.sky-fund-rule-div {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  padding-top: 10%;
+}
+
+.sky-fun-dev-div {
+  color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.four-parent-div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  width: 70vw;
+  left: 15%;
+  margin-top: 30px;
+}
+
+.four-parent-1,
+.four-parent-2 {
+  height: 70vh;
+  width: 35vw;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}
+
+.four-child-1,
+.four-child-2,
+.four-child-3,
+.four-child-4 {
+  background-color: #1a1a1a;
+  height: 36vh;
+  width: 30vw;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #ffd700;
+}
+
+.child-image {
+  margin-top: 40px;
+  margin-left: 40px;
+  position: relative;
+  left: 0;
+  align-self: flex-start;
+  height: 6vh;
+}
+
+.child-p1 {
+  color: #ffd700;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  margin-top: -40px;
+  margin-left: 10px;
+}
+
+.child-p2,
+.child-p2-1 {
+  margin-left: 15%;
+  margin-right: 15%;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+/* ---------------------- Reward Section ---------------------- */
+
+.reward-parent {
+  margin-top: -100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Reward-div {
+  background-color: #000;
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.guaranteed-div {
+   background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  padding-top: 7%;
+  padding-left: 40px;
+}
+
+.get-paid-div {
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 45px;
+  padding-top: 25px;
+}
+
+.last-reward-div {
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 45px;
+  padding-top: 25px;
+}
+
+.image-reward {
+  background-color: #000;
+  padding-top: 50px;
+}
+/* ===== Base styles remain same as yours ===== */
+/* I am only overriding for mobile responsiveness */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  .skyfunded-challenge-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .mobile {
+    width: 80%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .challege-video-div1 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .challenge-div {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sky-funded-button-div {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin: 15px auto;
+  }
+
+  .challenge-div-1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+
+  .challenge-div-2 {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .bar-divs {
+    font-size: 1rem;
+    gap: 10%;
+    margin: 15px 0;
+  }
+
+  .sign-up-now1 {
+    width: auto;
+    padding: 10px 20px;
+    margin: 20px auto;
+    font-size: 0.9rem;
+  }
+
+  /* Model Section */
+  .Model-div {
+    height: auto;
+    padding: 40px 10px;
+  }
+
+  .sky-fund-rule-div {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .sky-fun-dev-div {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .four-parent-div {
+    position: static;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    gap: 30px;
+  }
+
+  .four-parent-1,
+  .four-parent-2 {
+    width: 100%;
+    height: auto;
+    gap: 30px;
+  }
+
+  .four-child-1,
+  .four-child-2,
+  .four-child-3,
+  .four-child-4 {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+
+  .child-p1 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+
+  .child-p2,
+  .child-p2-1 {
+    font-size: 1rem;
+    margin: 15px 5%;
+  }
+
+  /* Reward Section */
+  .reward-parent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Reward-div {
+    height: auto;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .guaranteed-div {
+    font-size: 2rem;
+    padding: 20px 0;
+  }
+
+  .get-paid-div {
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
+
+  .last-reward-div {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  .image-reward {
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-reward img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .challenge-div-1 {
+    font-size: 2rem;
+  }
+  .sky-fund-rule-div {
+    font-size: 1.8rem;
+  }
+  .guaranteed-div {
+    font-size: 1.8rem;
+  }
+}

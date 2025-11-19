@@ -1,0 +1,284 @@
+/* === Global Reset === */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* === Container === */
+.challenge-container {
+    background-color: #000;
+    color: #ffd700;
+    padding: 40px 15px;
+    text-align: center;
+}
+
+/* === Title & Subtitle === */
+.title {
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #ffd700, #fff2a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: 'sans-serif';
+}
+
+.subtitle {
+    color: #e5c100;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+/* === Grid Layout === */
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* === Card === */
+.challenge-card,
+.challenge-card3 {
+    background-color: #111;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.challenge-card:hover,
+.challenge-card3:hover {
+    transform: translateY(-8px);
+    border-color: #ffd700;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+}
+
+/* === Card Image === */
+.challenge-image {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffd70033;
+    transition: transform 0.5s ease;
+}
+
+.challenge-card:hover .challenge-image,
+.challenge-card3:hover .challenge-image {
+    transform: scale(1.05);
+}
+
+/* === Popular Tag === */
+.popular-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffd700;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 10px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* === Card Content === */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: left;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffe066;
+}
+
+.card-description {
+    color: #d4af37;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* === Features === */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.feature {
+    border-bottom: 1px solid #333;
+    padding: 6px 0;
+    color: #fef3b0;
+    font-size: 0.9rem;
+}
+
+/* === Button === */
+.start-btn {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    text-align: center;
+}
+
+.start-btn:hover {
+    background-color: #ffcc00;
+    color: #111;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* === Steps Section === */
+.steps-container {
+    padding: 60px 30px;
+    background: #0a0a0a;
+    color: #ffd700;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+    background: linear-gradient(180deg, #ffd700, #fff2a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: 'sans-serif';
+    margin-bottom: 40px;
+}
+
+/* === Step Boxes === */
+.step-flow {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 8%;
+}
+
+.step-box {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 40px 20px;
+    width: 250px;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.step-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+}
+
+.step-icon {
+    font-size: 36px;
+    color: #ffd700;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.step-text h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.step-text p {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* === Step Label === */
+.step-label {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #000, #333);
+    border: 1px solid #ffd70055;
+    padding: 5px 12px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #ffd700;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #ffd70033;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    .challenge-card,
+    .challenge-card3 {
+        max-width: 100%;
+    }
+
+    .steps-container {
+        padding: 40px 20px;
+    }
+
+    .step-flow {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .step-box {
+        width: 90%;
+        height: 250px;
+        max-width: 350px;
+    }
+}

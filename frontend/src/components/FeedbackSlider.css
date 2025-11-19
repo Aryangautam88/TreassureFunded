@@ -1,0 +1,208 @@
+/* Full Page Background */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.slider-container {
+    height: auto;
+    min-height: 50vh;
+    padding: 30px 15px 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid golden; */
+}
+
+.slider-title {
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  margin-top: 0%;
+  margin-bottom: 10px;
+}
+
+.slider-subtitle {
+  font-size:0.9rem ;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.slick-slider {
+  width: 60%;
+  max-width: 900px;
+  padding: 10px 0;
+}
+
+.slick-list {
+  overflow: visible;
+}
+
+.slick-dots li button:before {
+  color: #ffd700;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffffff;
+}
+
+/* Feedback Card */
+.feedback-card1 {
+  background-color: #111;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: left;
+  margin: 15px;
+  box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  min-height: 300px;
+  max-width: 340px;
+  border: 2px solid #ffd700;
+}
+
+.feedback-card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.5);
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile-pic {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 3px solid #ffd700;
+}
+
+.feedback-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffd700;
+  margin: 0;
+}
+
+.feedback-role {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 3px;
+}
+
+.feedback-quote {
+  font-size: 16px;
+  font-style: italic;
+  color: #e6e6e6;
+  margin-top: 10px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 15px;
+}
+
+.feedback-quote::before {
+  content: "❝";
+  font-size: 40px;
+  color: #ffd700;
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.feedback-quote::after {
+  content: "❞";
+  font-size: 40px;
+  color: #ffd700;
+  font-weight: bold;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+
+@media (max-width: 768px) {
+  /* Slider Container */
+  .slider-container {
+    height: auto;               /* fit content */
+    min-height: 0;              /* remove minimum height */
+    padding: 10px 15px 10px 15px; /* minimal padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align content to top */
+    align-items: center;
+  }
+
+  /* Slider Title & Subtitle */
+  .slider-title {
+    font-size: 2rem;
+    margin: 0 0 10px 0;          /* remove top margin, reduce bottom */
+    text-align: center;
+  }
+
+  .slider-subtitle {
+    font-size: 1rem;
+    margin: 0 0 15px 0;          /* reduce margins */
+    max-width: 95%;
+    text-align: center;
+  }
+
+  /* Slick Slider adjustments */
+  .slick-slider {
+    width: 95%;                  /* full width for mobile */
+    padding: 0;
+  }
+
+  .slick-slide {
+    margin: 0 5px;               /* reduce gap between slides */
+  }
+
+  .slick-list {
+    overflow: visible;           /* keep slides visible */
+  }
+
+  /* Feedback Cards */
+  .feedback-card1 {
+    max-width: 260px;            
+    padding: 15px;               
+    margin: 10px auto;           
+    min-height: 280px;           /* uniform height */
+  }
+  /* Profile & Text inside card */
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .feedback-name {
+    font-size: 16px;
+  }
+
+  .feedback-role {
+    font-size: 12px;
+  }
+
+  .feedback-quote {
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 10px;
+  }
+
+  .feedback-quote::before,
+  .feedback-quote::after {
+    font-size: 30px;
+  }
+}

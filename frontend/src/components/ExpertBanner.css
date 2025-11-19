@@ -1,0 +1,149 @@
+.expert-banner {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+/* Top & Bottom Blur Overlay */
+.expert-banner::before,
+.expert-banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.expert-banner::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.expert-banner::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Coin slider */
+.coin-slider {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 80px;
+  z-index: 0;
+}
+.coin-slider.top{
+    top:40px;
+    
+    /* bottom: auto; */
+}
+
+.coin-slider.bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.coin-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 10s linear infinite;
+}
+
+.coin-track.reverse {
+  animation: scrollRight 10s linear infinite;
+}
+
+.coin-track img {
+  height: 60px;
+  margin: 0 10px;
+}
+
+/* Keyframes for scrolling */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Center text block */
+.banner-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 5%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+
+  padding: 40px 70px;
+  border-radius: 12px;
+  max-width: 90%;
+}
+
+.banner-text h2 {
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  margin-bottom: 12px;
+}
+
+
+.banner-text p {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .expert-banner {
+    padding-top: 60px;
+    height: 280px;
+  }
+
+  .banner-text {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .banner-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .coin-track img {
+    height: 40px;
+    margin: 0 6px;
+  }
+
+  .expert-banner::before,
+  .expert-banner::after {
+    height: 60px;
+  }
+}

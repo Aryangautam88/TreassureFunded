@@ -1,0 +1,344 @@
+.challenge-wrapper {
+  padding: 2rem;
+  background-color: #000;
+  color: #030303;
+  min-height: 100vh;
+  font-family: 'Times New Roman', serif;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.tabs button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  background-color: #1a1a1a;
+  color: #101010;
+  border: 1px solid #ffd700;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tabs .active {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.table-scroll-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  overflow: hidden;
+  min-width: 700px;
+}
+
+.cell {
+  background-color: #111;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #eee;
+  white-space: nowrap;
+}
+
+.header {
+  background-color: #333;
+  font-weight: bold;
+  color: #fff;
+}
+
+.feature-name {
+  background-color: #1a1a1a;
+  font-weight: 500;
+  text-align: left;
+  color: #fff;
+}
+
+.underline-important {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.highlight-amount {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.plan-btn {
+  border: none;
+  color: #000;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-family: 'Times New Roman', serif;
+  transition: background-color 0.3s ease;
+}
+
+.plan-btn:hover {
+  background-color: #e6c200;
+}
+
+.footer-info {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.footer-info span {
+  margin: 0 0.8rem;
+}
+
+.main-tab-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.main-tab {
+  padding: 5px 10px;
+  border: 2px solid #ffd700;
+  background-color: black !important;
+  color: rgb(5, 5, 5) !important;
+  font-weight: bold;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.main-tab:hover {
+  background-color: #e6c715;
+  color: #000;
+}
+
+.active-main-tab {
+  background-color: #111 !important;
+  color: white !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.buy-plan-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.buy-plan-btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: #ffd700;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Times New Roman', serif;
+  font-weight: bold;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.buy-plan-btn:hover {
+  background-color: #e6c200;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .table-grid {
+    min-width: 650px;
+  }
+
+  .cell {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .header {
+    font-size: 1rem;
+  }
+
+  .tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tabs button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .main-tab-header {
+    gap: 0.6rem;
+  }
+
+  .main-tab {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .buy-plan-btn {
+    width: auto;
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-tab {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tabs button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-info span {
+    display: block;
+    margin: 0.3rem 0;
+  }
+
+  .buy-plan-container {
+    flex-direction: column;
+  }
+
+  .buy-plan-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+/* Center fee button inside table cell */
+.cell .plan-btn {
+    display: inline-flex;          /* flex for horizontal & vertical centering */
+    justify-content: center;       /* center horizontally */
+    align-items: center;           /* center vertically */
+    margin: 0 auto;                /* center the button inside the cell */
+    text-align: center;
+    width: auto;                   /* button width fits content */
+    min-width: 80px;               /* optional, makes button visible */
+}
+/* Wrapper scroll fix */
+.table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table responsive grid */
+.table-grid {
+  display: grid;
+  min-width: 700px; /* force scroll on mobile */
+}
+
+/* Make grid cells readable */
+.cell {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap; /* prevent text breaking */
+  border: 1px solid #ddd;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .cell {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .plan-btn {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .main-tab-header button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .tabs button {
+    font-size: 12px;
+  }
+}
+/* ✅ Force table scroll on mobile */
+@media (max-width: 768px) {
+  .table-scroll-wrapper {
+    overflow-x: auto !important;
+    display: block;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-grid {
+    min-width: 900px !important;  /* force horizontal scroll */
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+  }
+
+  .cell {
+    white-space: nowrap !important; /* prevent text wrap breaking layout */
+    font-size: 12px !important;
+    padding: 8px !important;
+  }
+
+  .header {
+    font-size: 13px !important;
+  }
+
+  .plan-btn {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* ✅ Extra Small Device Support (Below 480px) */
+@media (max-width: 480px) {
+  .table-grid {
+    min-width: 1000px !important; /* more width for tiny screens */
+  }
+
+  .tabs button, 
+  .main-tab {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+  }
+}

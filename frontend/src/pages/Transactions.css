@@ -1,0 +1,153 @@
+/* -------------------- Container -------------------- */
+.transactions-container {
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.transactions-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+/* -------------------- Deposit List -------------------- */
+.deposit-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* -------------------- Deposit Card -------------------- */
+.deposit-card {
+  background: #0c0c0c;
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 360px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-left: 6px solid #ffd700;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.deposit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+}
+
+.deposit-card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.deposit-card a {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+.download-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #ffd700;
+  color: #1f1f3b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #ffec70;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 1024px) {
+  .deposit-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .deposit-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .deposit-card {
+    width: 95%;
+  }
+}
+
+/* -------------------- Receipt Styles (Real Invoice) -------------------- */
+.receipt-container {
+  width: 650px;
+  max-width: 90%;
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.receipt-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.receipt-header p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+.receipt-table th,
+.receipt-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.receipt-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.receipt-footer {
+  text-align: right;
+  font-weight: 700;
+  font-size: 1rem;
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+}
+
+.receipt-note {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 15px;
+  text-align: left;
+}

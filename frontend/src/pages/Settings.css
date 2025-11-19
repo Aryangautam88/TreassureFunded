@@ -1,0 +1,137 @@
+/* ---------------- SETTINGS CONTAINER ---------------- */
+.settings-container {
+  padding: 1.5rem;
+  background-color: #000; /* black background */
+  color: #FFD700; /* gold text */
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3); /* golden shadow */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------------- TITLE ---------------- */
+.settings-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* ---------------- SECTIONS ---------------- */
+.settings-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #111; /* dark black panel */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.settings-section h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 0.4rem;
+}
+
+/* ---------------- SETTINGS GROUP ---------------- */
+.settings-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-group label {
+  margin-bottom: 0.3rem;
+}
+
+.settings-group input[type="text"],
+.settings-group select {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #222; /* dark input */
+  color: #FFD700;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.settings-group.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.settings-group.checkbox label {
+  margin-left: 0.5rem;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.security-btn,
+.logout-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  transition: 0.2s all ease-in-out;
+}
+
+.security-btn {
+  background-color: #FFD700; /* gold button */
+}
+.security-btn:hover {
+  background-color: #e6c200;
+}
+
+.logout-btn {
+  background-color: #ff9900; /* dark gold/orange */
+}
+.logout-btn:hover {
+  background-color: #e68a00;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* red for danger */
+}
+.delete-btn:hover {
+  background-color: #b52b38;
+}
+
+/* ---------------- DANGER ZONE ---------------- */
+.danger-zone {
+  border-top: 1px solid #FFD700;
+  padding-top: 1rem;
+}
+
+/* ---------------- RESPONSIVE - MOBILE FIRST ---------------- */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1rem;
+  }
+
+  .settings-title {
+    font-size: 1.5rem;
+  }
+
+  .settings-section {
+    padding: 0.8rem;
+  }
+
+  .security-btn,
+  .logout-btn,
+  .delete-btn {
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 0.6rem;
+    width: 100%;
+  }
+
+  .settings-group {
+    margin-bottom: 0.8rem;
+  }
+
+  .settings-group input[type="text"],
+  .settings-group select {
+    padding: 0.4rem;
+  }
+}

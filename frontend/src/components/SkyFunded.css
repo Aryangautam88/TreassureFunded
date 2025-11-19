@@ -1,0 +1,305 @@
+/* ------------------- BASE ------------------- */
+.Skyfunded-parent-div {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------- HEADER ------------------- */
+.sky-funded-container {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.sky-fund-head-div {
+    background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+}
+
+.sky-fund-head-down-para1,
+.sky-fund-head-down-para2 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* ------------------- MAIN WRAPPER ------------------- */
+.left-right-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* increased spacing */
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto 50px;
+}
+
+/* ------------------- GUARANTEED BOXES ------------------- */
+.guaranteed-side-div {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* increased gap */
+  flex: 1;
+  min-width: 300px;
+}
+
+.guaranteed-box {
+  display: flex;
+  gap: 30px; /* increased gap */
+  background: linear-gradient(180deg, #111, #222);
+  border: 2px solid #ffd700;
+  border-radius: 20px;
+  padding: 25px; /* increased padding */
+  align-items: center;
+  animation: slide-left 2s ease-in-out;
+  height: 40vh;
+}
+
+.icon-img {
+  width: 80px;  /* increased */
+  height: 80px; /* increased */
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.guaranteed-text .title {
+  font-size: 2rem; /* increased */
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.guaranteed-text .subtitle,
+.guaranteed-text .description {
+  font-size: 1.2rem; /* increased */
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* ------------------- RIGHT SIDE DIV ------------------- */
+.sky-fund-right-div {
+  background: linear-gradient(180deg, #111, #222);
+  border: 2px solid #ffd700;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* increased gap */
+  padding: 25px; /* increased padding */
+  animation: slide-right 2s ease-in-out;
+}
+
+.Skyfund-right-side-inside-div1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Trade-p {
+  font-size: 2.5rem; /* increased */
+  font-weight: 700;
+  color: #fff;
+ 
+}
+
+.Trade-p1 {
+  font-size: 2rem; /* increased */
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.Trade-p2 {
+  font-size: 1.2rem; /* increased */
+  color: #fff;
+}
+
+.download-button-div {
+  background-color: #1c1c1c;
+  border: 2px solid #ffd700;
+  border-radius: 40px;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.2rem; /* increased */
+  width: 220px; /* increased */
+  height: 60px; /* increased */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.link-download{
+  text-decoration: none;
+}
+.download-button-div:hover {
+  background-color: #ffd700;
+  color: #000;
+  border: 2px solid #000;
+}
+
+.mt_5_video {
+  width: 100%;
+  height: 250px; /* increased */
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.down-div {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ------------------- STATS & COMMUNITY ------------------- */
+.down-full-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* increased */
+  justify-content: space-between;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.down-full-side-div1,
+.down-full-side-div2,
+.down-full-side-div3 {
+  background: #111;
+  border: 2px solid #ffd700;
+  border-radius: 20px;
+  padding: 25px; /* increased padding */
+  flex: 1;
+  min-width: 280px;
+}
+
+.down-side-div-p1,
+.sky-funded-p1,
+.time-p1 {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 2rem; /* increased */
+}
+
+.sky-funded-p2,
+.time-p2 {
+  color: #fff;
+  font-size: 1.2rem; /* increased */
+  margin-top: 5px;
+}
+
+.sky-funded-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-value {
+  color: #ffd700;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* ------------------- ANIMATIONS ------------------- */
+@keyframes zoomIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(-50%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-right {
+  0% { transform: translateX(50%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 768px) {
+  .left-right-wrapper,
+  .down-full-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .guaranteed-side-div{
+    font-size: 10px;
+  }
+  .guaranteed-box{
+    width: 282px;
+    height: 400px;
+  }
+
+  .guaranteed-side-div,
+  .sky-fund-right-div,
+  .down-full-side-div1,
+  .down-full-side-div2,
+  .down-full-side-div3 {
+    width: 95% !important;
+    padding: 20px; /* slightly smaller for mobile */
+    
+  }
+
+  /* Fix for stats & community content */
+  .down-full-side-div1 p,
+  .down-full-side-div1 .down-side-div-p1,
+  .down-full-side-div1 .sky-funded-p2,
+  .down-full-side-div2 p,
+  .down-full-side-div2 .sky-funded-p1,
+  .down-full-side-div2 .sky-funded-p2,
+  .down-full-side-div3 p,
+  .down-full-side-div3 .time-p1,
+  .down-full-side-div3 .time-p2 {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  .Trade-p,
+  .Trade-p1,
+  .Trade-p2,
+  .down-side-div-p1,
+  .sky-funded-p1,
+  .time-p1,
+  .sky-funded-p2,
+  .time-p2 {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .mt_5_video {
+    height: 180px;
+  }
+
+  .download-button-div {
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .icon-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sky-funded-stats {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}

@@ -1,0 +1,127 @@
+/* ================== SupportTickets.css ================== */
+
+.ticket-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #0b0b0b;
+  color: #ffd700;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.ticket-container .title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-container .subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ticket-form select {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+.ticket-form select:focus {
+  outline: none;
+  border-color: #ffbb28;
+}
+
+.ticket-form textarea {
+  min-height: 100px;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: #ffd700;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.ticket-form textarea:focus {
+  outline: none;
+  border-color: #ffbb28;
+}
+
+.ticket-form button {
+  align-self: flex-end;
+  padding: 0.6rem 1.2rem;
+  background-color: #ffbb28;
+  color: #0b0b0b;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ticket-form button:hover {
+  background-color: #ffc658;
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-item {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+}
+
+.ticket-item div {
+  margin-bottom: 0.4rem;
+}
+
+.ticket-item span.open {
+  color: #00c49f;
+  font-weight: bold;
+}
+
+.ticket-item span.closed {
+  color: #ff6384;
+  font-weight: bold;
+}
+
+.no-tickets {
+  color: #ccc;
+  font-style: italic;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1000;
+  color: #0b0b0b;
+}
+
+.toast.success {
+  background-color: #00c49f;
+}
+
+.toast.error {
+  background-color: #ff6384;
+}

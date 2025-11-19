@@ -1,0 +1,270 @@
+/* Main container */
+.earnings-container {
+  background-color: #000;
+  padding: 60px 20px;
+  text-align: center;
+  height: 120vh;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Header section */
+.earnings-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Globe video container */
+.globe-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Video itself (made bigger) */
+.globe-video {
+  width: 40vw;
+  height: 40vw;
+  max-width: 420px;
+  max-height: 420px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.15);
+}
+
+/* Overlay text below video */
+.overlay-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.overlay-text h1 {
+   background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+}
+
+.subtext {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffe066;
+}
+
+.description {
+  font-size: 1rem;
+  color: #f5f5dc;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* Earnings slider wrapper (make overflow scrollable) */
+.earnings-slider {
+  margin-top: 50px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbars */
+.earnings-slider::-webkit-scrollbar {
+  display: none;
+}
+.earnings-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Cards container */
+.earnings-cards {
+  display: flex;
+  gap: 15px;
+  padding: 10px 20px;
+  width: max-content;
+  animation: scrollSlider 60s linear infinite;
+}
+
+/* Scrolling animation */
+@keyframes scrollSlider {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Each card */
+.card-flag {
+  background-color: #111;
+  padding: 35px 20px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 0 0 auto;
+  border: 1px solid #ffd700;
+}
+
+.card-flag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Flag section inside card */
+.flag-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #222;
+  padding: 5px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0px 2px 6px rgba(255, 215, 0, 0.1);
+}
+
+/* Flag image */
+.flag-img {
+  width: 30px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #000;
+  border: 1px solid #ffd700;
+}
+
+/* Flag text */
+.flag-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* Amount */
+.card-flag h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .globe-video {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .overlay-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtext {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .earnings-slider {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .globe-video {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .overlay-text h1 {
+    font-size: 2rem;
+  }
+
+  .card-flag {
+    width: 160px;
+    padding: 28px 16px;
+  }
+
+  .flag-img {
+    width: 26px;
+    height: 18px;
+  }
+
+  .flag-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .globe-video {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  .overlay-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .card-flag {
+    width: 140px;
+    padding: 24px 14px;
+  }
+
+  .flag-text {
+    font-size: 0.85rem;
+  }
+
+  .card-flag h2 {
+    font-size: 1.2rem;
+  }
+}
+/* Updated earnings-slider */
+.earnings-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Updated earnings-cards with faster infinite animation */
+.earnings-cards {
+  display: flex;
+  gap: 15px;
+  padding: 10px 20px;
+  width: max-content;
+  animation: scrollSlider 30s linear infinite; /* Speed increased (was 60s) */
+}
+
+/* Faster and infinite animation that loops */
+@keyframes scrollSlider {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

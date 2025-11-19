@@ -1,0 +1,72 @@
+.request-container {
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.request-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.request-table th,
+.request-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.request-table th {
+  background-color: #f7f7f7;
+  color: #444;
+  font-weight: 600;
+}
+
+.request-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.approve-btn,
+.decline-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.approve-btn {
+  background-color: #6c757d;
+}
+
+.decline-btn {
+  background-color: #6c757d;
+}
+
+.approve-btn.active {
+  background-color: #28a745 !important;
+}
+
+.decline-btn.active {
+  background-color: #dc3545 !important;
+}

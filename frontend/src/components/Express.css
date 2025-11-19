@@ -1,0 +1,379 @@
+.express-main-container {
+    background-color: #000000;
+    height: 100%;
+    margin-top: 100px;
+    width: 100vw;
+}
+
+/* Container Layout */
+.express-container-1 {
+    height: 45vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Left Side Text & Video */
+.express-container-1-1 {
+    height: 65vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.reason {
+    height: 100%;
+    width: 60%;
+    margin-top: 30%;
+    margin-left: 22%;
+    /* background-color: #1a1a1a; */
+    /* box-shadow: 0px 0px 25px rgba(255, 215, 0, 0.4); */
+}
+
+/* Main Express Heading */
+.express-model {
+     background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+    margin-left: 12%;
+    margin-top: 95px;
+}
+
+/* Description Text */
+.model-express-para {
+    color: #e8e8e8;
+    font-size: 1rem;
+    margin-left: 12%;
+    margin-top: 45px;
+}
+
+.model-express-bars {
+    color: #d8c058;
+    font-size: 1rem;
+    margin-left: 12%;
+    margin-top: 45px;
+}
+
+.model-express-bars span {
+    margin-right: 3%;
+}
+
+/*  */
+
+@media (max-width: 1024px) {
+  .model-express-button {
+    height: 60px; /* tablet */
+    width: 60%;
+    margin-left: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .model-express-button {
+    height: 50px; /* mobile */
+    width: 80%;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Right Side Placeholder */
+.express-container-1-2 {
+    height: 50vh;
+    width: 40vw;
+}
+/* .model-express-button11{
+    height: 10px;
+} */
+
+/* Section Title */
+.express-maincontainer-2 {
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+    margin-top: 200px;
+    /* margin:auto; */
+    height: 50vh;
+    
+    /* text-align: center; */
+}
+
+/* Container of all boxes */
+.big-boxes-div {
+    height: 90vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1%;
+    flex-direction: column;
+}
+
+.big-boxes-div1,
+.big-boxes-div2 {
+    height: 45vh;
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+/* Box Styling */
+.big-box-div-1-1,
+.big-box-div-1-2,
+.big-box-div-1-3,
+.big-boxes-div2-1,
+.big-boxes-div2-2,
+.big-boxes-div2-3 {
+    height: 43vh;
+    width: 26vw;
+    background-color: #1a1a1a;
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.big-box-div-1-1:hover,
+.big-box-div-1-2:hover,
+.big-box-div-1-3:hover,
+.big-boxes-div2-1:hover,
+.big-boxes-div2-2:hover,
+.big-boxes-div2-3:hover {
+    background-color: #333300;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Headings Inside Boxes */
+.heading-3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 3px;
+    margin-top: 20px;
+}
+
+/* Paragraph inside boxes */
+.box-para {
+  font-size: 13px;
+    color: #e6e6e6;
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* Button Styling */
+.model-express-button {
+    background-color: #ffd700;
+    border-radius: 25px;
+    height: 40px;
+    width: 15vw;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-left: 12%;
+    margin-top: 45px;
+    transition: 0.3s ease-in-out;
+}
+
+.model-express-button:hover {
+    background-color: #000;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+}
+
+/* Final Heading */
+.express-container-3 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: end;
+     background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+    margin-top: 5%;
+    margin-right:50px ;
+}
+
+/* Last section layout */
+.express-3 {
+    height: 90vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10%;
+    flex-direction: column;
+}
+/* Base styles (your existing styles remain as is) */
+
+/* ===== Responsive for tablets and smaller ===== */
+@media (max-width: 1024px) {
+  .express-container-1 {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .express-container-1-1 {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 40px auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reason {
+    width: 90%;
+    margin: 30px auto 0 auto;
+  }
+
+  .express-model {
+    font-size: 2.5rem;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .model-express-para,
+  .model-express-bars {
+    margin-left: 0;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .model-express-bars span {
+    margin-right: 6%;
+  }
+
+  .express-container-1-2 {
+    width: 90%;
+    height: auto;
+    margin: 0 auto 40px auto;
+  }
+
+  .express-maincontainer-2 {
+    font-size: 2rem;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .big-boxes-div {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .big-boxes-div1,
+  .big-boxes-div2 {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .big-box-div-1-1,
+  .big-box-div-1-2,
+  .big-box-div-1-3,
+  .big-boxes-div2-1,
+  .big-boxes-div2-2,
+  .big-boxes-div2-3 {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .heading-3 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+
+  .box-para {
+    font-size: 1rem;
+    margin: 15px 10px;
+  }
+
+  .model-express-button {
+    width: 60%;
+    height: 60px;
+    margin-left: 0;
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+
+  .express-container-3 {
+    font-size: 2.5rem;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .express-3 {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
+}
+
+/* ===== Responsive for phones (small devices) ===== */
+@media (max-width: 480px) {
+  .express-model {
+    font-size: 2rem;
+  }
+
+  .model-express-para,
+  .model-express-bars {
+    font-size: 0.9rem;
+  }
+
+  .heading-3 {
+    font-size: 1rem;
+  }
+
+  .box-para {
+    font-size: 0.9rem;
+  }
+
+  .model-express-button {
+    width: 110%;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .express-container-3 {
+    font-size: 2rem;
+    
+  }
+}

@@ -1,0 +1,253 @@
+/* Hero Section Container */
+.sky-funded-hero {
+  position: relative;
+  padding: 100px 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Background Video */
+.sky-funded-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  z-index: -2;
+}
+
+/* Gold Radial Overlay */
+.sky-funded-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.07), rgba(0, 0, 0, 0.95));
+  z-index: -1;
+}
+
+/* Left Side Content */
+.sky-funded-left {
+  max-width: 600px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  z-index: 2;
+}
+
+/* Badge Title */
+.sky-funded-badge {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffd700;
+  background-image: linear-gradient(90deg, #050505, #012c3f, #073f56);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 3s linear infinite;
+  text-shadow: 0 0 10px rgba(6, 7, 1, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Trust Badge Below Title */
+.where-trust-meet-trading {
+  background-color: #070707;
+  color: gold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid gold;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+/* Title Text */
+.sky-funded-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  line-height: 1.2;
+}
+
+.sky-funded-title span {
+  color: #ffd700;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+/* Description Text */
+.sky-funded-desc {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Feature List - Vertical */
+.sky-funded-features {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.sky-funded-feature {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffd700;
+  text-align: left;
+}
+
+.sky-funded-feature img {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
+}
+
+/* Button Wrapper */
+.sky-funded-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Primary Button */
+.sky-funded-primary-btn1 {
+  background-color: #000;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  border-radius: 12px;
+  padding: 14px 36px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
+  min-width: 180px;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  outline: none;
+}
+
+.sky-funded-primary-btn1:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Secondary Button */
+.sky-funded-secondary-btn1 {
+  background-color: #000;
+  color: gold;
+  border: 2px solid #ffd700;
+  border-radius: 12px;
+  padding: 14px 36px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  min-width: 180px;
+  text-align: center;
+}
+
+.sky-funded-secondary-btn1:hover {
+  background-color: #ffd700;
+  color: #000;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+/* Right Side Image */
+.sky-funded-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.sky-funded-right img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sky-funded-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .sky-funded-left {
+    align-items: center;
+  }
+
+  .where-trust-meet-trading {
+    align-self: center;
+  }
+
+  .sky-funded-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sky-funded-primary-btn1,
+  .sky-funded-secondary-btn1 {
+    width: 80%;
+    text-decoration: none;
+  }
+
+  .sky-funded-title {
+    font-size: 1.8rem;
+  }
+
+  .sky-funded-badge {
+    font-size: 3rem;
+  }
+
+  .sky-funded-features {
+    align-items: center;
+  }
+
+  .sky-funded-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.sky-funded-secondary-btn1{
+  text-decoration: none;
+}

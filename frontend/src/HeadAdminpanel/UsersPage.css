@@ -1,0 +1,78 @@
+/* UsersPage.css - Black & Gold Theme */
+
+.users-container {
+  padding: 25px 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000; /* dark background */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); /* soft gold glow */
+  color: #FFD700; /* gold text */
+}
+
+.users-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 5px #FFD700;
+}
+
+/* Table Styling */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
+}
+
+.users-table th,
+.users-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+  color: #FFD700;
+  border-bottom: 1px solid #FFD70033;
+}
+
+.users-table thead {
+  background-color: #222;
+}
+
+.users-table th {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.users-table tr:hover {
+  background-color: #333;
+  transition: background 0.3s ease;
+}
+
+/* Approval Status Cell */
+.users-table td:last-child {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #FFD700;
+}
+
+/* No users message */
+.users-table td[colspan] {
+  text-align: center;
+  font-size: 16px;
+  padding: 25px 0;
+  color: #FFD700aa;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .users-table th,
+  .users-table td {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+}

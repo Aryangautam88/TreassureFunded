@@ -1,0 +1,193 @@
+/* ProcessSteps.css */
+
+/* Container */
+.process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: #000; /* Dark background */
+}
+
+/* Title */
+.process-title {
+  /* font-size: 2.2rem; */
+  margin-bottom: 50px;
+  /* color: #ffd700; /* Gold */
+  /* text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; */
+  /* font-weight: 600;  */
+   background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+}
+
+/* Steps wrapper */
+.steps-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Step card */
+.step-card {
+  background-color: #111;
+  border: 2px solid #ffd700;
+  border-radius: 15px;
+  padding: 25px;
+  width: 320px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 8px 25px rgba(0,0,0,0.7);
+  border: 2px solid #fff700;
+}
+
+.step-label {
+  display: inline-block;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+.step-title {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+.step-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #eee;
+  line-height: 1.5;
+}
+
+/* Challenge image container */
+.challenge-options {
+  width: 100%;
+  height: 220px; /* Bigger height */
+  overflow: hidden;
+  border-radius: 12px;
+  /* border: 2px solid #ffd700; */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.challenge-options:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  border: 2px solid #fff700;
+}
+
+/* Image itself */
+.challenge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.challenge-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Progress line */
+.progress-container1 {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.progress-line {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 6px;
+  background: linear-gradient(to right, #333, #444);
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.progress-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%; /* Adjust dynamically in JS if needed */
+  background: linear-gradient(to right, #ffd700, #ffec8b);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.progress-step {
+  width: 24px;
+  height: 24px;
+  background-color: #555;
+  border: 3px solid #ffd700;
+  border-radius: 50%;
+  position: relative;
+  top: -10px;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background-color: #ffd700;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .steps-wrapper {
+    gap: 15px;
+  }
+  .step-card {
+    width: 45%;
+  }
+  .challenge-options {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .steps-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .step-card {
+    width: 90%;
+  }
+  .challenge-options {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .process-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .step-title {
+    font-size: 1.3rem;
+  }
+  .step-description {
+    font-size: 0.95rem;
+  }
+  .challenge-options {
+    height: 150px;
+  }
+}

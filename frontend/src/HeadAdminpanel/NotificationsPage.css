@@ -1,0 +1,71 @@
+/* NotificationsPage.css */
+
+.admin-notification-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1e1e1e; /* dark panel background */
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-notification-form h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #FFD700; /* golden title */
+}
+
+.admin-notification-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-notification-form input,
+.admin-notification-form textarea,
+.admin-notification-form select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.admin-notification-form input:focus,
+.admin-notification-form textarea:focus,
+.admin-notification-form select:focus {
+  border-color: #FFD700;
+  box-shadow: 0 0 5px #FFD700;
+}
+
+.admin-notification-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.admin-notification-form button {
+  padding: 0.8rem;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.admin-notification-form button:hover {
+  background-color: #e6c200;
+  transform: translateY(-2px);
+}
+
+.admin-notification-form button:active {
+  transform: translateY(0);
+}

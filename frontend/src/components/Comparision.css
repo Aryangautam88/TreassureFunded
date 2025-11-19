@@ -1,0 +1,128 @@
+.comparison-container {
+  background-color: #000;
+  color: #ffd700;
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+.comparison-header h1 {
+  background: linear-gradient(90deg, #ffd700, #fff2a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'sans-serif';
+  margin-bottom: 10px;
+ margin-left: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comparison-header p {
+  font-size: 1rem;
+  color: #fff2a8;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  margin-left: 30px;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 900px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.comparison-table th {
+  background-color: #111;
+  color: #ffd700;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comparison-table td {
+  background-color: #000;
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+}
+
+.comparison-table tr:nth-child(even) td {
+  background-color: #111;
+}
+
+.comparison-table tr:hover td {
+  background-color: #222;
+}
+
+.comparison-table .logo {
+  max-height: 40px;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s;
+}
+
+.comparison-table .logo:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comparison-header h1 {
+    font-size: 2rem;
+  }
+
+  .comparison-header p {
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  .comparison-table .logo {
+    max-height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .comparison-header p {
+    font-size: 0.8rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 8px 5px;
+    font-size: 0.75rem;
+  }
+
+  .comparison-table .logo {
+    max-height: 25px;
+  }
+}

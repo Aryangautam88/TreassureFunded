@@ -1,0 +1,292 @@
+.refer-page {
+  padding: 40px 30px;
+  color: #fff;
+  background-color: #0d1117;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.alert-warning {
+  background: #ff9800;
+  color: #1e1e1e;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.refer-box {
+  background: #161b22;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.refer-header {
+  display: flex;
+  gap: 30px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #2f2f2f;
+  padding-bottom: 12px;
+}
+
+.refer-header span {
+  cursor: pointer;
+  padding: 6px 12px;
+  color: #bbb;
+}
+
+.refer-header .active {
+  border-bottom: 3px solid #a259ff;
+  color: #a259ff;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.top-cards {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.card {
+  /* background: #0d1117; */
+  /* border: 1px solid #2e2e2e; */
+  padding: 20px 24px;
+  border-radius: 10px;
+  flex: 1;
+  color: white;
+  transition: none; /* removed hover shadow */
+}
+
+.card-label {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.card-value {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.withdraw-box {
+  background: #0d1117;
+  border-left: 2px solid #333;
+  padding-left: 24px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.withdraw-title {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.withdraw-sub {
+  font-size: 13px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.withdraw-amount {
+  font-size: 30px;
+  color: #00e676;
+  margin: 16px 0 12px;
+}
+
+.withdraw-btn {
+  background: #6c4dff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.payout-link {
+  display: inline-block;
+  font-size: 13px;
+  color: #a259ff;
+  margin-top: 8px;
+}
+
+.divider {
+  border-color: #2c2f33;
+  margin: 30px 0;
+}
+
+.referral-details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.left, .middle, .right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.left h3, .middle h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user-icon {
+  margin-right: 5px;
+}
+
+.referral-box {
+  display: flex;
+  margin-top: 10px;
+  height: 6vh;
+  width: 30vw;
+  margin-top: 30px;
+}
+
+.referral-box input {
+  flex: 1;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+}
+
+.referral-box button {
+  background: #6c4dff;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  height: 6vh;
+  margin-top: 0px;
+}
+
+.copied-msg {
+  color: #00e676;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.right ol {
+  padding-left: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.referral-table {
+  margin-top: 40px;
+}
+
+.referral-table .table-header {
+  background: linear-gradient(to right, #a259ff, #8c6cff);
+  padding: 14px 20px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.referral-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0d1117;
+}
+
+.referral-table th, .referral-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #2e2e2e;
+  text-align: left;
+  font-size: 14px;
+}
+
+.referral-table .no-data {
+  text-align: center;
+  padding: 50px 0;
+  color: #666;
+}
+
+.referral-table img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.payout-section {
+  padding-top: 20px;
+}
+
+.payout-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.payout-terms {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.payout-terms .highlight {
+  color: #00e676;
+  font-weight: 500;
+}
+
+.payout-table .table-header {
+  background: linear-gradient(to right, #a259ff, #8c6cff);
+  padding: 14px 20px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.payout-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0d1117;
+}
+
+.payout-table th, .payout-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #2e2e2e;
+  text-align: left;
+  font-size: 14px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.page-btn {
+  background: #1f1f1f;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: not-allowed;
+}
+
+.page-number {
+  font-weight: bold;
+  color: #fff;
+}
