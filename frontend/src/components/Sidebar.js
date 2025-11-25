@@ -96,6 +96,18 @@ const Sidebar = () => {
             </span>
             <span className="label">Logout</span>
           </button>
+          
+
+          <button
+                  className="logout-btn2"
+                  onClick={() => window.location.href = "/"}
+                >
+                  <span className="icon">
+                  </span>
+                  <span className="label">Go to Website</span>
+                </button>
+
+
         </nav>
       </div>
     </>

@@ -6,7 +6,6 @@ import alphaLogo from '../Assets/alphacapital.jpg'; // Alpha Capital logo
 import fiversLogo from '../Assets/5.jpg'; // The 5%ers logo
 
 const comparisonData = [
-  { variable: '20% Profit Share From Challenge Phase Profits', treasure: '20%', ftmo: '0%', alpha: '0%', fivers: '0%' },
   { variable: 'Profile Target', treasure: '7%/5%', ftmo: '7%/5%', alpha: '7%/5%', fivers: '7%/5%' },
   { variable: 'Drawdown', treasure: 'Balance-Based', ftmo: 'Balance-Based', alpha: 'Balance-Based', fivers: 'Balance-Based' },
   { variable: 'Account Reset Option', treasure: '✔', ftmo: 'No', alpha: 'No', fivers: 'No' },

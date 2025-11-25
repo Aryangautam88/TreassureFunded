@@ -51,10 +51,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>About Us</h3>
           <ul>
-            <li>📞 Contact Us: +44 20 3734 1025</li>
-            <li>📧 Email: Support@treassurefunded.com</li>
-            <li>📍 Exinity Limited</li>
-            <li>🗺️ 5th Floor, 355 NEX Tower, London, UK</li>
+            <li> Contact Us: +44 20 3734 1025</li>
+            <li> Email: Support@treassurefunded.com</li>
+            <li> Exinity Limited</li>
+            <li> 5th Floor, 355 NEX Tower, London, UK</li>
           </ul>
         </div>
 

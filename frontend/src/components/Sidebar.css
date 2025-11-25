@@ -88,6 +88,10 @@
   transition: color 0.3s ease;
 }
 
+.logout-btn2{
+
+  margin-top: 10px;
+}
 .sidebar-link.active {
   /* background-color: #0f0f0f; */
   color: #FFD700;

@@ -104,6 +104,33 @@ body, html {
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
 }
 
+.feedback-grid {
+  scrollbar-width: thin;        /* Firefox */
+  scrollbar-color: grey #1a1a1a;  /* thumb + track */
+}
+
+/* Chrome, Safari, Edge */
+.feedback-grid::-webkit-scrollbar {
+  width: 5px;      
+}
+
+.feedback-grid::-webkit-scrollbar-track {
+  background: #1a1a1a;  
+  border-radius: 10px;
+}
+
+.feedback-grid::-webkit-scrollbar-thumb {
+  background: grey;       
+  border-radius: 10px;
+}
+
+.feedback-grid::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;   
+}
+
+
+
+
 /* Text inside card */
 .feedback-name,
 .feedback-title,

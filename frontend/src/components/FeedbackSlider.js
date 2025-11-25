@@ -52,7 +52,7 @@ const feedbacks = [
 const FeedbackSlider = () => {
   const settings = {
     infinite: true,
-    speed: 3000,
+    speed: 8000,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
@@ -85,7 +85,7 @@ const FeedbackSlider = () => {
         Discover insights from our employees as they reflect on their journey and growth.
       </p>
 
-      <Slider {...settings}>
+      <Slider {...settings} className="feedback">
         {feedbacks.map((feedback, index) => (
           <div key={index} className="feedback-card1">
             <div className="feedback-header">

@@ -5,6 +5,7 @@ import shakehand from "../Assets/shake_hand_img.jpg";
 import mt_5_video from "../Assets/mt_5_video.mp4";
 import people from "../Assets/people_img.jpg";
 import time  from "../Assets/time_img.jpg";
+import empower  from "../Assets/empower.png";
 
 const SkyFundedPage = () => {
   return (
@@ -39,7 +40,7 @@ const SkyFundedPage = () => {
             <div className="guaranteed-text">
               <p className="title">Adaptable Trading Conditions</p>
               <p className="subtitle">
-                Low spreads | Low Commission | Balanced Based Drawdown
+                Low spreads | Zero Commission | Balanced Based Drawdown
               </p>
             </div>
           </div>
@@ -73,6 +74,7 @@ const SkyFundedPage = () => {
 
       <div className="down-full-div">
         <div className="down-full-side-div1">
+          <img src={empower} alt="people" className="sky-img" />
           <p className="down-side-div-p1">Empowering Traders in 195+ Countries</p>
           <div className="sky-funded-stats">
             <div className="stat-item">
