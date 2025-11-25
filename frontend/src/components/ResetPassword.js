@@ -16,8 +16,8 @@ const ResetPassword = () => {
     }
 
     try {
-    //   const API_URL = process.env.REACT_APP_BACKEND_URL || "https://api.treassurefunded.com";
-      const API_URL = process.env.REACT_APP_BACKEND_URL || "https://localhost:5000";
+      const API_URL = process.env.REACT_APP_BACKEND_URL || "https://api.treassurefunded.com";
+      // const API_URL = process.env.REACT_APP_BACKEND_URL || "https://localhost:5000";
 
       const res = await axios.post(`${API_URL}/api/auth/reset-password/${token}`, {
         newPassword,

@@ -1,17 +1,19 @@
 .ad-background {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;        /* FIX */
+  min-height: auto;    /* FIX */
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0d0d0d; /* deep black */
+  background-color: #0d0d0d;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
-  color: #ffd700; /* golden text */
+  color: #ffd700;
+  padding: 40px 0;     /* optional */
 }
+
 
 .background-video {
   position: absolute;

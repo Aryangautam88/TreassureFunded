@@ -180,7 +180,8 @@ router.post("/forgot-password", async (req, res) => {
       expiresIn: "15m"
     });
 
-    const resetLink = `http://localhost:3001/reset-password/${token}`;
+    const resetLink = `https://treassurefunded.com/reset-password/${token}`;
+    // const resetLink = `http://localhost:3001/reset-password/${token}`;
 
     await transporter.sendMail({
       from: `"TreasureFunded" <${process.env.EMAIL_USER}>`,

@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTopButton from './ScrollToTopButton';
 
 import Common from './Common';
 import Loginpage from './components/Loginpage';
@@ -49,10 +50,12 @@ import ComplaintHandling from './components/ComplaintHandling';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 
+
 const App = () => {
   
   return (
     <Router>
+      <ScrollToTopButton/>
       <Routes>
         {/* Public Pages */}
         <Route path="/" element={<Common />}>
