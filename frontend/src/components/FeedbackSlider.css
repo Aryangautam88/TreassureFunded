@@ -6,15 +6,16 @@ body, html {
   font-family: "Poppins", sans-serif;
 }
 
+/* -------------------------
+      Slider Container
+-------------------------- */
 .slider-container {
-    height: auto;
-    min-height: 50vh;
-    padding: 30px 15px 20px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px solid golden; */
+  /* padding: 120px 15px 60px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .slider-title {
@@ -24,23 +25,25 @@ body, html {
   color: transparent;
   font-weight: 700;
   font-size: 3rem;
-  font-family: 'sans-serif';
-  margin-top: 0%;
   margin-bottom: 10px;
 }
 
 .slider-subtitle {
-  font-size:0.9rem ;
+  font-size: 0.95rem;
   color: #e0e0e0;
-  margin-bottom: 40px;
   max-width: 600px;
+  margin-bottom: 30px;
   line-height: 1.5;
 }
 
+/* Slick Settings */
 .slick-slider {
-  width: 60%;
-  max-width: 900px;
-  padding: 10px 0;
+  width: 45%;
+  max-width: 1100px;
+}
+
+.slick-slide {
+  padding: 8px;             
 }
 
 .slick-list {
@@ -51,140 +54,138 @@ body, html {
   color: #ffd700;
   font-size: 12px;
 }
-
 .slick-dots li.slick-active button:before {
-  color: #ffffff;
+  color: white;
 }
 
-/* Feedback Card */
+/* -------------------------
+      Feedback Card
+-------------------------- */
 .feedback-card1 {
-  background-color: #111;
-  padding: 40px;
+  background: #111;
+  padding: 28px;
   border-radius: 15px;
-  text-align: left;
-  margin: 15px;
-  box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  min-height: 300px;
-  max-width: 340px;
   border: 2px solid #ffd700;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+  transition: 0.3s ease-in-out;
+
+  /* ⭐ FIXED SIZE – equal cards */
+  width: 100%;
+  max-width: 300px;
+  height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .feedback-card1:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(255,215,0,0.5);
 }
 
+/* Header */
 .feedback-header {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  gap: 12px;
 }
 
 .profile-pic {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 15px;
   border: 3px solid #ffd700;
 }
 
 .feedback-name {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 700;
   color: #ffd700;
-  margin: 0;
 }
 
 .feedback-role {
-  font-size: 14px;
+  font-size: 13px;
   color: #ccc;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
+/* Quote */
 .feedback-quote {
-  font-size: 16px;
-  font-style: italic;
+  font-size: 15px;
   color: #e6e6e6;
-  margin-top: 10px;
-  line-height: 1.6;
+  line-height: 1.5;
   position: relative;
-  padding-left: 15px;
+  padding-left: 14px;
+  margin-top: 30px;
 }
 
 .feedback-quote::before {
   content: "❝";
-  font-size: 40px;
-  color: #ffd700;
-  font-weight: bold;
   position: absolute;
-  top: -10px;
   left: -10px;
+  top: -8px;
+  font-size: 28px;
+  color: #ffd700;
 }
-
 .feedback-quote::after {
   content: "❞";
-  font-size: 40px;
-  color: #ffd700;
-  font-weight: bold;
   position: absolute;
-  bottom: -10px;
   right: -10px;
+  bottom: -8px;
+  font-size: 28px;
+  color: #ffd700;
 }
 
-@media (max-width: 768px) {
-  /* Slider Container */
-  .slider-container {
-    height: auto;               /* fit content */
-    min-height: 0;              /* remove minimum height */
-    padding: 10px 15px 10px 15px; /* minimal padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* align content to top */
-    align-items: center;
+/* -------------------------
+      Responsive
+-------------------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .slick-slider {
+    width: 90%;
   }
 
-  /* Slider Title & Subtitle */
+  .feedback-card1 {
+    max-width: 260px;
+    height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slider-container {
+    padding: 40px 10px 30px;
+  }
+
   .slider-title {
-    font-size: 2rem;
-    margin: 0 0 10px 0;          /* remove top margin, reduce bottom */
-    text-align: center;
+    font-size: 2.2rem;
   }
 
   .slider-subtitle {
-    font-size: 1rem;
-    margin: 0 0 15px 0;          /* reduce margins */
+    font-size: 0.95rem;
     max-width: 95%;
-    text-align: center;
   }
 
-  /* Slick Slider adjustments */
   .slick-slider {
-    width: 95%;                  /* full width for mobile */
-    padding: 0;
+    width: 95%;
   }
 
   .slick-slide {
-    margin: 0 5px;               /* reduce gap between slides */
+    padding: 5px;   /* ⭐ Mobile gap reduced */
   }
 
-  .slick-list {
-    overflow: visible;           /* keep slides visible */
-  }
-
-  /* Feedback Cards */
   .feedback-card1 {
-    max-width: 260px;            
-    padding: 15px;               
-    margin: 10px auto;           
-    min-height: 280px;           /* uniform height */
+    max-width: 240px;
+    height: 280px;
+    padding: 20px;
   }
-  /* Profile & Text inside card */
+
   .profile-pic {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
   }
 
   .feedback-name {
@@ -197,12 +198,14 @@ body, html {
 
   .feedback-quote {
     font-size: 14px;
-    line-height: 1.4;
-    padding-left: 10px;
   }
+}
 
-  .feedback-quote::before,
-  .feedback-quote::after {
-    font-size: 30px;
+/* Small Phones */
+@media (max-width: 480px) {
+  .feedback-card1 {
+    max-width: 220px;
+    height: 260px;
+    padding: 16px;
   }
 }
