@@ -163,7 +163,14 @@ const Kyc = () => {
 
         <div className="form-group">
           <label>Date of Birth *</label>
-          <input type="date" name="dob" value={formData.dob} readOnly />
+          <input
+            type="date"
+            name="dob"
+            value={formData.dob}
+            onChange={handleChange}
+            required
+            disabled={status === "approved"}
+          />
         </div>
 
         <div className="form-group">

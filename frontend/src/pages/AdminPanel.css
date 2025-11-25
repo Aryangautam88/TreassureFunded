@@ -35,13 +35,20 @@ body {
   background: #1a1a1a;
   color: #FFD700;
   padding: 1.2rem 2rem;
-  border-radius: 14px;
+  border-radius: 5px;
   display: flex;
+  border: 1px solid #fff;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  /* box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); */
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.topbar:hover{
+
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); 
+
 }
 
 .topbar h1 {
@@ -84,12 +91,13 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.2rem;
+
 }
 
 .stat-card {
   background: #111;
-  border: 1px solid #222;
-  border-radius: 16px;
+  border: 1px solid #fff;
+  border-radius: 5px;
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -142,8 +150,8 @@ body {
 .notifications {
   flex: 1;
   background: #111;
-  border: 1px solid #222;
-  border-radius: 16px;
+  border: 1px solid #fff;
+  border-radius: 5px !important;
   padding: 1.5rem;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
   min-width: 260px;
@@ -152,7 +160,7 @@ body {
 .notifications h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #FFD700;
+  border-bottom: 1px solid #FFf;
   padding-bottom: 0.6rem;
 }
 

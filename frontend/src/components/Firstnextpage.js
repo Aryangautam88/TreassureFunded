@@ -29,7 +29,7 @@ const Firstnextpage = () => {
       <div className="box-side-div">
         {/* <div className="Key-highlight">Key Highlights</div> */}
         <div className="gradient-text-div">
-          Maximize Your Trading Success with Treassure Funded
+          Maximize Your Trading Success with  Treassure Funded
         </div>
 
         <div className="box-main-div1">

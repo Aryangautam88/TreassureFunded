@@ -69,7 +69,8 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #f2eded;
+  color: black;
+  background-color: #ffc800;
 }
 
 /* Button Section */

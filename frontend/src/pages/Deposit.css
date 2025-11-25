@@ -8,6 +8,7 @@
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .deposit-left-panel {
@@ -18,9 +19,10 @@
 
 .deposit-left-panel h1 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 40px;
   margin-bottom: 25px;
-  color: #FFD700;
+  margin-top: -70px;
+  color: #FFF;
 }
 
 .deposit-left-panel label {
@@ -255,12 +257,13 @@ button:hover {
   padding: 20px;
   border-radius: 10px;
   color: #fff;
+  border: 1px solid #FFF;
 }
 
 .challenge-plans-section h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #ffcc00;
+  color: #ffF;
   text-shadow: 0 0 5px #ffcc00;
 }
 
@@ -268,6 +271,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
+  
 }
 
 .plan-card {
@@ -354,6 +358,7 @@ button:hover {
 @media (max-width: 480px) {
   .deposit-left-panel h1 {
     font-size: 22px;
+    margin-top: 80px;
   }
   .deposit-left-panel label {
     font-size: 14px;
@@ -399,12 +404,12 @@ button:hover {
   gap: 20px;
 }
 
-.deposit-left-panel h1 {
+/* .deposit-left-panel h1 {
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
   color: #FFD700;
-}
+} */
 
 .deposit-left-panel label {
   font-weight: 600;

@@ -69,6 +69,24 @@
   color: #FFD700;
   background-color: gold;
 }
+.logout-btn1{
+  display: flex;
+  margin-top: -1px;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+}
+
+
+
+.logout-btn1 .icon {
+  margin-right: 12px;
+  font-size: 18px;
+  color: inherit;
+  transition: color 0.3s ease;
+}
 
 .sidebar-link.active {
   /* background-color: #0f0f0f; */
@@ -144,7 +162,9 @@
   display: flex;
   justify-content: center;  /* center horizontally */
   align-items: center;      /* center vertically */
-  padding: 20px 0;          /* space around the logo */
+  padding: 30px 0;  
+  width: 200px;
+  height: 50p;        /* space around the logo */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle bottom border */
 }
 

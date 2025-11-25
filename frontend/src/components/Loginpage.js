@@ -32,6 +32,7 @@ const Login = () => {
       console.log("🔍 Sending payload:", payload); // Debug
 
       const API_URL = process.env.REACT_APP_BACKEND_URL || "https://api.treassurefunded.com";
+      
       // const API_URL = "https://api.treassurefunded.com";
       const response = await axios.post(`${API_URL}/api/auth/login`, payload, {
         headers: { "Content-Type": "application/json" },
@@ -117,11 +118,14 @@ const Login = () => {
 
             {error && <p className="loginUnique-error">{error}</p>}
 
-            <div className="loginUnique-remember-forgot">
+           <div className="loginUnique-remember-forgot">
               <label>
                 <input type="checkbox" /> Remember me
               </label>
-              Forgot password?
+
+              <a href="/ForgotPassword" className="loginUnique-forgot-link">
+                Forgot password?
+              </a>
             </div>
 
             <button type="submit" className="loginUnique-btn">Sign In</button>

@@ -69,7 +69,7 @@ const AdminWithdrawalsPage = () => {
             <div className="withdrawal-card-body">
               <div className="withdrawal-icon">💼</div>
               <div className="withdrawal-info">
-                <div>Minimum withdrawable amount: <strong>${w.min}</strong></div>
+                <div>Minimum withdrawable amount : <strong>${w.min}</strong></div>
                 <div>Maximum withdrawable amount: <strong>${w.max}</strong></div>
                 <div>Charge Type: <strong>{w.chargeType}</strong></div>
                 <div>Charges Amount: <strong>{w.chargeAmount}</strong></div>

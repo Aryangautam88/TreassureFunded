@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaChartLine,
   FaUser,
@@ -10,13 +10,15 @@ import {
   FaFileAlt,
   FaPhoneAlt,
   FaIdCard,
-  FaBars
+  FaBars,
+  FaSignOutAlt
 } from "react-icons/fa";
-import logo from "../Assets/tfl.png"; // ✅ Import your logo
+import logo from "../Assets/tfl.png";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
@@ -26,12 +28,17 @@ const Sidebar = () => {
     { to: "/withdrawls", label: "Withdrawals", icon: <FaWallet /> },
     { to: "/transaction", label: "Transaction", icon: <FaExchangeAlt /> },
     { to: "/deposit", label: "Deposit", icon: <FaWallet /> },
-    { to: "/settings", label: "Settings", icon: <FaCog /> },
-    { to: "/certificates", label: "Certificates", icon: <FaFileAlt /> },
     { to: "/support", label: "Support Ticket", icon: <FaPhoneAlt /> },
   ];
 
-  // Close sidebar when clicking outside (mobile)
+  // Logout function
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
+
+  // Close sidebar when clicking outside
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (
@@ -61,9 +68,7 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        {/* ✅ Sidebar Logo */}
         <div className="sidebar-logo">
           <img src={logo} alt="TFL Logo" />
         </div>
@@ -83,6 +88,14 @@ const Sidebar = () => {
               </Link>
             );
           })}
+
+          {/* 🔥 Logout Button (Last Option) */}
+          <button className="logout-btn1" onClick={handleLogout}>
+            <span className="icon">
+              <FaSignOutAlt />
+            </span>
+            <span className="label">Logout</span>
+          </button>
         </nav>
       </div>
     </>

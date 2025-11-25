@@ -20,29 +20,7 @@ const Footer = () => {
 
       {/* Footer Links */}
       <div className="footer-container">
-        <div className="footer-section">
-          <h3>Markets</h3>
-          <ul>
-            <li>Stocks</li>
-            <li>Currency Pairs (FX)</li>
-            <li>Indices</li>
-            <li>Commodities</li>
-            <li>Cryptocurrencies</li>
-          </ul>
-        </div>
 
-        <div className="footer-section">
-          <h3>Knowledge Hub</h3>
-          <ul>
-            <li>Trading Videos</li>
-            <li>Ebooks</li>
-            <li>Webinars</li>
-            <li>Trading Tools</li>
-            <li>Pip Calculator</li>
-            <li>Blog & Insights</li>
-            <li>Market Analysis</li>
-          </ul>
-        </div>
 
         <div className="footer-section">
           <h3>Regulation & Licensing</h3>
@@ -60,39 +38,6 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>About Us</h3>
-          <ul>
-            <li>📞 Contact Us: +44 20 3734 1025</li>
-            <li>📧 Email: Support@treassurefunded.com</li>
-            <li>📍 Exinity Limited</li>
-            <li>🗺️ 5th Floor, 355 NEX Tower, London, UK</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="footer-container">
-        <div className="footer-section">
-          <h3>Trading</h3>
-          <ul>
-            <li>Accounts Overview & Comparison</li>
-            <li>Demo Trading</li>
-            <li>Islamic Account</li>
-            <li>Copy Trading</li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h3>Platform</h3>
-          <ul>
-            <li>MT4</li>
-            <li>MT5</li>
-            <li>Mobile Trading</li>
-            <li>Web Trader</li>
-            <li>API Trading</li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
           <h3>Support</h3>
           <ul>
             <li>Help Center</li>
@@ -102,7 +47,20 @@ const Footer = () => {
             <li>Community Forum</li>
           </ul>
         </div>
+
+        <div className="footer-section">
+          <h3>About Us</h3>
+          <ul>
+            <li>📞 Contact Us: +44 20 3734 1025</li>
+            <li>📧 Email: Support@treassurefunded.com</li>
+            <li>📍 Exinity Limited</li>
+            <li>🗺️ 5th Floor, 355 NEX Tower, London, UK</li>
+          </ul>
+        </div>
+
       </div>
+
+      
 
       <div className="footer-note">
         © 2025 Treassure Funded. All rights reserved. | Designed with ❤️ by Treasure Funded Team

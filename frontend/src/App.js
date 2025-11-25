@@ -46,8 +46,11 @@ import CookiePolicy from './components/CookiePolicy';
 import RiskDisclosure from './components/RiskDisclosure';
 import TermsAndConditions from './components/TermsAndConditions';
 import ComplaintHandling from './components/ComplaintHandling';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 
 const App = () => {
+  
   return (
     <Router>
       <Routes>
@@ -80,6 +83,8 @@ const App = () => {
 
         {/* Admin Login */}
         <Route path="/adminlogin" element={<Adminlogin />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
 
         {/* Protected Admin Routes */}
         <Route

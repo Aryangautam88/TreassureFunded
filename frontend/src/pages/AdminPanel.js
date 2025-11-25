@@ -174,6 +174,18 @@ const AdminPanel = () => {
             icon={<FaMoneyBill />}
             isCurrency
           />
+          <StatCard
+            title="Total Deposit"
+            value={(userData.totalBalance || 0) + totalApprovedDeposits}
+            icon={<FaMoneyBill />}
+            isCurrency
+          /> 
+          <StatCard
+            title="Refrrral Bonus"
+            value={(userData.totalBalance || 0) + totalApprovedDeposits}
+            icon={<FaMoneyBill />}
+            isCurrency
+          /> 
         </div>
 
         {/* ✅ User Deposits Section */}

@@ -5,14 +5,19 @@ import { FaUserCircle } from "react-icons/fa";
 const Profile = () => {
   const defaultImage = "/default-image1.png";
   const API_BASE =
-    process.env.REACT_APP_BACKEND_URL?.replace(/\/+$/, "") || "https://api.treassurefunded.com";
-    // process.env.REACT_APP_BACKEND_URL?.replace(/\/+$/, "") || "http://treassurefunded:5000";
+    process.env.REACT_APP_BACKEND_URL?.replace(/\/+$/, "") ||
+    "https://api.treassurefunded.com";
+
   const token = localStorage.getItem("token");
   const username = localStorage.getItem("username");
 
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [toast, setToast] = useState({ visible: false, message: "", type: "" });
+  const [toast, setToast] = useState({
+    visible: false,
+    message: "",
+    type: "",
+  });
 
   const [profile, setProfile] = useState({
     fullName: "",
@@ -24,23 +29,13 @@ const Profile = () => {
     profession: "",
     profileImage: null,
     imagePreview: defaultImage,
-    linkedin: "",
-    github: "",
-    social: "",
-    bio: "",
-    skills: "",
-    experience: "",
-    education: "",
-    website: "",
   });
 
-  /** ---------------- Toast ---------------- **/
   const showToast = (message, type = "success") => {
     setToast({ visible: true, message, type });
     setTimeout(() => setToast({ visible: false, message: "", type: "" }), 3000);
   };
 
-  /** ---------------- Fetch Profile ---------------- **/
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -63,14 +58,6 @@ const Profile = () => {
           dob: data.dob || "",
           address: data.address || "",
           profession: data.profession || "",
-          linkedin: data.linkedin || "",
-          github: data.github || "",
-          social: data.social || "",
-          bio: data.bio || "",
-          skills: data.skills || "",
-          experience: data.experience || "",
-          education: data.education || "",
-          website: data.website || "",
           imagePreview: data.profileImage
             ? data.profileImage.startsWith("http")
               ? data.profileImage
@@ -86,7 +73,6 @@ const Profile = () => {
     fetchProfile();
   }, [API_BASE, username, token]);
 
-  /** ---------------- Handlers ---------------- **/
   const handleProfileChange = (e) =>
     setProfile({ ...profile, [e.target.name]: e.target.value });
 
@@ -104,7 +90,6 @@ const Profile = () => {
   const handleImageError = () =>
     setProfile((prev) => ({ ...prev, imagePreview: defaultImage }));
 
-  /** ---------------- Validation ---------------- **/
   const validateStep1 = () => {
     const required = [
       "fullName",
@@ -124,17 +109,14 @@ const Profile = () => {
     return true;
   };
 
-  const validateStep2 = () => true; // optional fields, no strict validation
-
   const handleNext = () => {
     if (step === 1 && !validateStep1()) return;
-    if (step === 2 && !validateStep2()) return;
     setStep(step + 1);
   };
 
-  /** ---------------- Submit ---------------- **/
   const handleSubmitAll = async () => {
-    if (!validateStep1() || !validateStep2()) return;
+    if (!validateStep1()) return;
+
     if (!username || !token) {
       showToast("User not logged in", "error");
       return;
@@ -147,7 +129,8 @@ const Profile = () => {
     if (useFormData) {
       const formData = new FormData();
       Object.entries(profile).forEach(([key, value]) => {
-        if (key === "profileImage" && value) formData.append("profileImage", value);
+        if (key === "profileImage" && value)
+          formData.append("profileImage", value);
         else if (key !== "imagePreview") formData.append(key, value || "");
       });
       body = formData;
@@ -163,12 +146,11 @@ const Profile = () => {
         body,
       });
       const result = await res.json();
-      if (!res.ok) throw new Error(result?.message || "Failed to complete profile");
+      if (!res.ok)
+        throw new Error(result?.message || "Failed to complete profile");
 
-      // ✅ Thank You toast
-      showToast("Thank you! Your profile has been updated successfully.", "success");
+      showToast("Thank you! Your profile has been updated.", "success");
 
-      // Reset back to Step 1
       setStep(1);
 
       if (result?.user?.profileImage) {
@@ -185,11 +167,9 @@ const Profile = () => {
     }
   };
 
-  /** ---------------- Helpers ---------------- **/
   const headings = {
     1: { title: "Personal Info", icon: <FaUserCircle /> },
-    2: { title: "Additional Details", icon: <FaUserCircle /> },
-    3: { title: "Review & Finish", icon: <FaUserCircle /> },
+    2: { title: "Review & Finish", icon: <FaUserCircle /> },
   };
 
   const profileCompletion = () => {
@@ -221,9 +201,13 @@ const Profile = () => {
         <h2>
           {headings[step].icon} {headings[step].title}
         </h2>
-        <p>Step {step} of 3</p>
+        <p>Step {step} of 2</p>
+
         <div className="progress-bar">
-          <div className="progress" style={{ width: `${profileCompletion()}%` }} />
+          <div
+            className="progress"
+            style={{ width: `${profileCompletion()}%` }}
+          />
         </div>
       </div>
 
@@ -231,68 +215,53 @@ const Profile = () => {
         {step === 1 && (
           <div className="step step1">
             <div className="avatar-section">
-              <img src={profile.imagePreview} onError={handleImageError} alt="Profile" />
+              <img
+                src={profile.imagePreview}
+                onError={handleImageError}
+                alt="Profile"
+              />
               <label className="upload-btn">
                 Change Photo
                 <input type="file" accept="image/*" onChange={handleImageChange} />
               </label>
             </div>
+
             <div className="form">
-              {["fullName","email","phone","country","dob","address","profession"].map(
-                (field) => (
-                  <input
-                    key={field}
-                    type={field === "dob" ? "date" : "text"}
-                    name={field}
-                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                    value={profile[field]}
-                    onChange={handleProfileChange}
-                    required
-                  />
-                )
-              )}
+              {[
+                "fullName",
+                "email",
+                "phone",
+                "country",
+                "dob",
+                "address",
+                "profession",
+              ].map((field) => (
+                <input
+                  key={field}
+                  type={field === "dob" ? "date" : "text"}
+                  name={field}
+                  placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                  value={profile[field]}
+                  onChange={handleProfileChange}
+                  required
+                />
+              ))}
             </div>
           </div>
         )}
 
         {step === 2 && (
-          <div className="step step2">
-            <div className="step-2-card">
-              <h3>Additional Details</h3>
-              <div className="form">
-                {[
-                  { name: "linkedin", placeholder: "LinkedIn Profile" },
-                  { name: "github", placeholder: "GitHub Profile" },
-                  { name: "social", placeholder: "Twitter / Other Social" },
-                  { name: "bio", placeholder: "Short Bio" },
-                  { name: "skills", placeholder: "Skills (comma separated)" },
-                  { name: "experience", placeholder: "Experience (e.g., 3 years)" },
-                  { name: "education", placeholder: "Education" },
-                  { name: "website", placeholder: "Website / Portfolio" },
-                ].map((field) => (
-                  <input
-                    key={field.name}
-                    type="text"
-                    name={field.name}
-                    placeholder={field.placeholder}
-                    value={profile[field.name] || ""}
-                    onChange={handleProfileChange}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {step === 3 && (
           <div className="step step3">
             <div className="step-3-card">
               <h3>Review Your Info</h3>
+
               {Object.entries(profile)
                 .filter(([k]) => k !== "profileImage" && k !== "imagePreview")
                 .map(([key, value]) => (
                   <div className="info-row" key={key}>
-                    <span className="info-label">{key.charAt(0).toUpperCase() + key.slice(1)}</span>
+                    <span className="info-label">
+                      {key.charAt(0).toUpperCase() + key.slice(1)}
+                    </span>
                     <span className="info-value">{value || "-"}</span>
                   </div>
                 ))}
@@ -304,10 +273,11 @@ const Profile = () => {
       <div className="navigation">
         {step > 1 && (
           <button onClick={() => setStep(step - 1)} className="back-btn">
-            Back
+            Back 
           </button>
         )}
-        {step < 3 ? (
+
+        {step < 2 ? (
           <button onClick={handleNext} className="next-btn">
             Next
           </button>
@@ -318,7 +288,9 @@ const Profile = () => {
         )}
       </div>
 
-      {toast.visible && <div className={`toast ${toast.type}`}>{toast.message}</div>}
+      {toast.visible && (
+        <div className={`toast ${toast.type}`}>{toast.message}</div>
+      )}
     </div>
   );
 };

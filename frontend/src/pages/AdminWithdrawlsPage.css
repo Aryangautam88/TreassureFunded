@@ -20,7 +20,8 @@
 .withdrawals-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 50px;
+
   justify-content: center;
   margin-bottom: 50px;
 }
@@ -28,10 +29,11 @@
 /* Individual Card */
 .withdrawal-card {
   background-color: #111; /* slightly darker for depth */
-  border: 2px solid #FFD700;
+  border: 1px solid #fff;
   border-radius: 12px;
-  width: 260px;
-  padding: 20px;
+  width: 370px;
+  height: 500px;
+  padding: 10px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
@@ -45,8 +47,8 @@
 /* Card Header */
 .withdrawal-card-header {
   font-size: 1.4rem;
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-weight: 800;
+  margin-bottom: 20px;
 }
 
 /* Card Body */
@@ -54,19 +56,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* spacing between icon and info */
+  gap: 30px; /* spacing between icon and info */
 }
 
 .withdrawal-icon {
   font-size: 2.2rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .withdrawal-info {
-  font-size: 0.95rem;
+  font-size: .9rem;
   margin-bottom: 15px;
   text-align: left;
-  line-height: 1.6; /* more spacing for readability */
+
+  line-height: 2.9; /* more spacing for readability */
 }
 
 /* Request Button */
@@ -76,12 +79,13 @@
   border: none;
   border-radius: 6px;
   /* padding: 10px 15px; */
-  margin-top: 35px;
+  margin-top: 5px;
   cursor: pointer;
   /* font-weight: bold; */
-  height: 8vh;
+  height: 5.7vh;
   font-size: small;
   transition: background 0.3s, transform 0.2s;
+  /* margin-bottom: 10px; */
 }
 .request-btn1{
    background-color: #FFD700;
@@ -177,10 +181,15 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    /* margin: -20px; */
+  }
+
+  .request-btn{
+    margin-top: 100px;
   }
 
   .withdrawal-card {
-    width: 90%;
+    width: 100%;
   }
 
   .withdrawal-form {

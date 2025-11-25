@@ -2,7 +2,7 @@
 
 .first-fullpage {
   background-color: #000;
-  min-height: 100vh;
+  min-height: 130vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,10 +13,10 @@
 }
 
 .coin-side-div {
-  /* height: 76vh;
-  width: 40vw; */
+    height: 76vh;
+    /* width: 40vw; */
   margin-right: 55%;
-  margin-top: 12%;
+  margin-top: 8%;
 }
 
 @keyframes zoomIn {
@@ -210,6 +210,12 @@
 
 /* -------------------- Mobile Responsive -------------------- */
 
+@media screen and (min-width: 768px){
+  
+}
+
+
+
 @media screen and (max-width: 768px) {
   .first-fullpage {
     padding: 20px 10px;
@@ -232,7 +238,7 @@
 
   .gradient-text-div {
     font-size: 1.8rem;
-    width: 100%;
+    width: 80%;
     text-align: center;
     margin: 30px auto;
     padding: 0 10px;
@@ -258,7 +264,7 @@
   .under-box-main-div2,
   .under-box-main-div3,
   .under-box-main-div4 {
-    width: 95%;
+    width: 90%;
     height: auto;
     padding: 15px;
     box-sizing: border-box;

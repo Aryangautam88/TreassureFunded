@@ -3,10 +3,11 @@
 .kyc-container {
   max-width: 600px;
   width: 90%; /* full width on mobile */
-  margin: 40px auto;
-  padding: 30px 25px;
+  margin: 10px auto;
+  padding: -10px 25px;
   background: #0b0b0b; /* black background */
-  border-radius: 12px;
+  border-radius: 5px;
+  border: 1px solid #fff;
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15); /* subtle golden shadow */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.3s ease;
@@ -20,14 +21,14 @@
 .kyc-container h2 {
   font-size: 26px;
   font-weight: 600;
-  color: #FFD700;
+  color: #FFF;
   text-align: center;
   margin-bottom: 12px;
 }
 
 .kyc-container p {
   font-size: 14px;
-  color: #e0c45c;
+  color: #FFF;
   text-align: center;
   margin-bottom: 25px;
 }
@@ -35,7 +36,7 @@
 .kyc-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 1px;
 }
 
 .kyc-form .form-group {
@@ -48,13 +49,14 @@
   font-size: 14px;
   color: #FFD700;
   font-weight: 500;
+  
 }
 
 .kyc-form input,
 .kyc-form select {
   padding: 12px 14px;
-  border: 1px solid #FFD700;
-  border-radius: 8px;
+  border: 1px solid #fff;
+  border-radius: 5px;
   font-size: 14px;
   transition: all 0.2s ease-in-out;
   background-color: #1a1a1a; /* dark input background */

@@ -3,6 +3,7 @@ import "./HowItWorks.css";
 import flipimg3 from "../Assets/howworks_2 (1).jpg";
 import flipimg1 from "../Assets/howworks_2 (2).jpg";
 import flipimg2 from "../Assets/howworks_2 (3).jpg";
+import { Link } from "react-router-dom";
 
 const HowItWorks = () => {
   return (
@@ -35,7 +36,10 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="start-div">Start Now</div>
+        <Link to="/register" className="start-div">
+          Start Now
+        </Link>
+
       </div>
 
       {/* Flip Cards Section */}

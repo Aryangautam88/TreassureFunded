@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = require('../models/User');
 
+
 async function authenticateToken(req, res, next) {
   try {
     const authHeader = req.headers['authorization'];
