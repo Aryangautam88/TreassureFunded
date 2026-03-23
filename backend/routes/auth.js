@@ -23,6 +23,9 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 // Helper for case-insensitive matching
@@ -39,6 +42,7 @@ router.post('/register', async (req, res) => {
     if (!email || !password || !username) {
       return res.status(400).json({ msg: 'Please provide all required fields' });
     }
+
     if (password !== confirmPassword) {
       return res.status(400).json({ msg: 'Passwords do not match' });
     }
@@ -47,17 +51,17 @@ router.post('/register', async (req, res) => {
     username = username.trim();
 
     const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+
     if (existingUser) {
       return res.status(400).json({ msg: 'Username or email already exists' });
     }
 
-    // 🔥 DO NOT HASH HERE – Model pre-save hook will hash automatically
     const newUser = new User({
       username,
       fullName,
       email,
       phone,
-      password,     // <-- RAW PASSWORD
+      password,
       country,
       referralId,
     });
@@ -65,22 +69,95 @@ router.post('/register', async (req, res) => {
     await newUser.save();
 
     if (process.env.EMAIL_USER) {
-      transporter.sendMail({
-        from: `"TreasureFunded" <${process.env.EMAIL_USER}>`,
-        to: email,
-        subject: 'Welcome to TreasureFunded!',
-        html: `
-          <h2>Welcome, ${fullName || username}!</h2>
-          <p>Thank you for registering at TreasureFunded.</p>
-          <p>Happy Trading 🚀</p>
-        `,
-      });
-    }
+
+        try {
+
+          // 1️⃣ Welcome Email
+          await transporter.sendMail({
+            from: `"TreassureFunded" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "Welcome to TreassureFunded!",
+            html: `
+            <h2>Dear ${fullName || username}, 🚀</h2>
+
+            <p>Welcome to TreassureFunded, and thank you for choosing our services.</p>
+
+            <p>We are pleased to have you with us and look forward to supporting you on your journey with our team.</p>
+
+            <p>Our goal is to provide you with a smooth and professional service experience.</p>
+
+            <p>Best regards,<br>Team TreassureFunded</p>
+            `
+          });
+
+          console.log("Welcome email sent");
+
+        } catch (err) {
+          console.log("Welcome email error:", err);
+        }
+
+
+        // 2️⃣ KYC Email (Delayed)
+        setTimeout(() => {
+
+          console.log("Sending KYC email...");
+
+          transporter.sendMail({
+            from: `"TreassureFunded" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "Complete Your KYC Verification",
+            html: `
+            <h2>Complete Your KYC Verification</h2>
+
+            <p>Dear ${fullName || username},</p>
+
+            <p>Thank you for registering with TreassureFunded.</p>
+
+            <p>To activate your account and enable trading as well as withdrawal features,
+            please complete your KYC verification process.</p>
+
+            <p>KYC verification helps us maintain security and ensure a safe trading environment.</p>
+
+            <a href="${process.env.BASE_URL}/kyc"
+            style="
+            padding:12px 22px;
+            background:#f0b90b;
+            color:black;
+            text-decoration:none;
+            border-radius:6px;
+            display:inline-block;
+            margin-top:10px;
+            font-weight:bold;">
+            Complete KYC
+            </a>
+
+            <p style="margin-top:20px">
+            If you have already completed your KYC, please ignore this email.
+            </p>
+
+            <p>Best regards,<br>Team TreassureFunded</p>
+            `
+          })
+          .then(() => {
+            console.log("KYC email sent successfully");
+          })
+          .catch((err) => {
+            console.log("KYC email error:", err);
+          });
+
+        }, 2 * 60 * 1000); // 2 minutes delay
+
+}
 
     res.status(201).json({
       msg: 'User registered successfully',
-      user: { userId: newUser._id, email: newUser.email, username: newUser.username },
+      user: {
+        userId: newUser._id,
+        email: newUser.email,
+        username: newUser.username
+      },
     });
+
   } catch (err) {
     console.error('Registration error:', err);
     res.status(500).json({ msg: 'Server error' });
@@ -180,8 +257,7 @@ router.post("/forgot-password", async (req, res) => {
       expiresIn: "15m"
     });
 
-    const resetLink = `https://treassurefunded.com/reset-password/${token}`;
-    // const resetLink = `http://localhost:3001/reset-password/${token}`;
+    const resetLink = `${process.env.BASE_URL}/reset-password/${token}`;
 
     await transporter.sendMail({
       from: `"TreasureFunded" <${process.env.EMAIL_USER}>`,
@@ -218,7 +294,10 @@ router.post("/reset-password/:token", async (req, res) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    const user = await User.findById(decoded.id);
+    const mongoose = require("mongoose");
+    const user = await User.findOne({
+      _id: new mongoose.Types.ObjectId(decoded.id)
+    });
     if (!user) return res.status(404).json({ msg: "User not found" });
 
     // ❗ DO NOT HASH HERE

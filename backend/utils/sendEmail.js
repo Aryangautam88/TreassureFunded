@@ -6,14 +6,14 @@ const sendEmail = async (to, subject, text) => {
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
       secure: process.env.EMAIL_PORT == 465, // true for 465, false for 587
-      auth: {
+      auth: {   
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: `"Treasure Funded" <${process.env.EMAIL_USER}>`,
+      from: `"Treassure Funded" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       text,

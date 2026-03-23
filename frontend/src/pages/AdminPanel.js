@@ -50,6 +50,7 @@ const StatCard = ({ title, icon, value, isCurrency = false }) => (
 );
 
 const AdminPanel = () => {
+
   const [userData, setUserData] = useState(null);
   const [userDeposits, setUserDeposits] = useState([]);
   const [loadingDeposits, setLoadingDeposits] = useState(true);
@@ -59,41 +60,84 @@ const AdminPanel = () => {
   const [showLogoutPopup, setShowLogoutPopup] = useState(false);
 
   const username = localStorage.getItem("username");
-  const baseURL = process.env.REACT_APP_BACKEND_URL || "https://api.treassurefunded.com";
+  const token = localStorage.getItem("token");
 
-  // ✅ Memoized functions
+  const baseURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
+
+  // ✅ Fetch User Data
   const fetchUserData = useCallback(async () => {
     try {
-      const response = await axios.get(`${baseURL}/api/users/${username}`);
+
+      const response = await axios.get(`${baseURL}/api/users/${username}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       setUserData(response.data);
-    } catch {
+
+    } catch (err) {
+      console.error("User data error:", err.message);
       setError("Failed to load user data");
     }
-  }, [baseURL, username]);
 
+  }, [baseURL, username, token]);
+
+
+  // ✅ Fetch Deposits
   const fetchUserDeposits = useCallback(async () => {
+
     try {
+
       setLoadingDeposits(true);
-      const res = await axios.get(`${baseURL}/api/deposits/user/${username}`);
+
+      const res = await axios.get(`${baseURL}/api/deposits/user/${username}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       setUserDeposits(res.data || []);
+
     } catch (err) {
+
       console.error("Error fetching deposits:", err.message);
       setUserDeposits([]);
-    } finally {
-      setLoadingDeposits(false);
-    }
-  }, [baseURL, username]);
 
-  const fetchNotifications = useCallback(async () => {
-    try {
-      const res = await axios.get(`${baseURL}/api/notifications`);
-      setNotifications(res.data);
-    } catch (err) {
-      console.error("Error fetching notifications:", err.message);
+    } finally {
+
+      setLoadingDeposits(false);
+
     }
-  }, [baseURL]);
+
+  }, [baseURL, username, token]);
+
+
+  // ✅ Fetch Notifications
+  const fetchNotifications = useCallback(async () => {
+
+    try {
+
+      const res = await axios.get(`${baseURL}/api/notifications`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setNotifications(res.data);
+
+    } catch (err) {
+
+      console.error("Error fetching notifications:", err.message);
+
+    }
+
+  }, [baseURL, token]);
+
 
   useEffect(() => {
+
     if (!username) {
       setError("User not logged in");
       return;
@@ -103,7 +147,10 @@ const AdminPanel = () => {
     fetchUserDeposits();
     fetchNotifications();
 
-    const socket = io(baseURL);
+    const socket = io(baseURL, {
+      auth: { token },
+    });
+
     socket.on("new-notification", (notification) => {
       setNotifications((prev) => [notification, ...prev]);
       setPopupMessage(notification.message);
@@ -118,85 +165,124 @@ const AdminPanel = () => {
       socket.disconnect();
       clearInterval(interval);
     };
-  }, [username, baseURL, fetchUserData, fetchUserDeposits, fetchNotifications]);
+
+  }, [username, baseURL, token, fetchUserData, fetchUserDeposits, fetchNotifications]);
+
 
   const handleLogout = () => {
     setShowLogoutPopup(true);
   };
 
+
   const confirmLogout = () => {
     localStorage.clear();
-    window.location.href = "/login";
+    window.location.replace("/login");
   };
+
 
   if (error) return <div className="loading error-message">{error}</div>;
   if (!userData) return <div className="loading">Loading user data...</div>;
+
 
   const totalApprovedDeposits = userDeposits
     .filter((d) => d.status === "approved")
     .reduce((acc, curr) => acc + curr.amount, 0);
 
+
   return (
+
     <div className="user-wrapper">
-      {popupMessage && <NotificationPopup message={popupMessage} onClose={() => setPopupMessage(null)} />}
-      {showLogoutPopup && <LogoutPopup onConfirm={confirmLogout} onCancel={() => setShowLogoutPopup(false)} />}
+
+      {popupMessage && (
+        <NotificationPopup
+          message={popupMessage}
+          onClose={() => setPopupMessage(null)}
+        />
+      )}
+
+      {showLogoutPopup && (
+        <LogoutPopup
+          onConfirm={confirmLogout}
+          onCancel={() => setShowLogoutPopup(false)}
+        />
+      )}
 
       <div className="main-panel">
-        {/* ✅ Topbar */}
+
+        {/* Topbar */}
+
         <div className="topbar">
+
           <div className="user-welcome">
             <h1>Dashboard</h1>
-            <h2 className="username">Hello, {userData.name || username}!</h2>
+            <h2 className="username">
+              Hello, {userData.name || username}!
+            </h2>
             <p>Hope you’re having a productive day 🚀</p>
           </div>
 
           <button onClick={handleLogout} className="logout-btn">
             <FaSignOutAlt /> Logout
           </button>
+
         </div>
 
-        {/* ✅ Stats Section */}
+
+        {/* Stats */}
+
         <div className="stats-container">
+
           <StatCard
             title="Total Profit"
             value={(userData.totalProfit || 0) + totalApprovedDeposits}
             icon={<FaChartLine />}
             isCurrency
           />
+
           <StatCard
             title="Withdrawl"
             value={userData.activeChallenges || 0}
             icon={<FaTicketAlt />}
           />
+
           <StatCard
             title="Total Balance"
             value={(userData.totalBalance || 0) + totalApprovedDeposits}
             icon={<FaMoneyBill />}
             isCurrency
           />
+
           <StatCard
             title="Total Deposit"
             value={(userData.totalBalance || 0) + totalApprovedDeposits}
             icon={<FaMoneyBill />}
             isCurrency
-          /> 
+          />
+
           <StatCard
             title="Refrrral Bonus"
             value={(userData.totalBalance || 0) + totalApprovedDeposits}
             icon={<FaMoneyBill />}
             isCurrency
-          /> 
+          />
+
         </div>
 
-        {/* ✅ User Deposits Section */}
+
+        {/* Deposits */}
+
         <div className="deposits-section">
+
           <h3>User Deposits</h3>
+
           {loadingDeposits ? (
             <p>Loading deposits...</p>
           ) : userDeposits.length === 0 ? (
             <p>No deposits found.</p>
           ) : (
+
             <table className="deposits-table">
+
               <thead>
                 <tr>
                   <th>Method</th>
@@ -205,43 +291,70 @@ const AdminPanel = () => {
                   <th>Date</th>
                 </tr>
               </thead>
+
               <tbody>
+
                 {userDeposits.map((deposit) => (
+
                   <tr key={deposit._id}>
                     <td>{deposit.paymentMethod}</td>
                     <td>${deposit.amount}</td>
                     <td>{deposit.status}</td>
                     <td>{new Date(deposit.createdAt).toLocaleString()}</td>
                   </tr>
+
                 ))}
+
               </tbody>
+
             </table>
+
           )}
+
         </div>
 
-        {/* ✅ Notifications */}
+
+        {/* Notifications */}
+
         <div className="bottom-dashboard">
+
           <section className="notifications">
+
             <h3>
               <FaBell /> Notifications
             </h3>
+
             <ul>
+
               {notifications.length > 0 ? (
+
                 notifications.map((n) => (
                   <li key={n._id}>
                     <strong>{n.title}</strong>: {n.message}{" "}
-                    <small>({new Date(n.createdAt).toLocaleString()})</small>
+                    <small>
+                      ({new Date(n.createdAt).toLocaleString()})
+                    </small>
                   </li>
                 ))
+
               ) : (
+
                 <li>No notifications yet.</li>
+
               )}
+
             </ul>
+
           </section>
+
         </div>
+
       </div>
+
     </div>
+
   );
+
 };
 
 export default AdminPanel;

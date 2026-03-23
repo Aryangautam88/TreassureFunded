@@ -72,17 +72,22 @@ const Registration = () => {
     }
 
     try {
-      // ✅ correct backend API endpoint
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/register`, formData);
 
+      const API_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
-      // toastr.success("Registration successful!", "Success"); // ❌ old toastr
-      toast.success("Registration successful!", { position: "top-right", autoClose: 3000 }); // ✅ new
+      const res = await axios.post(`${API_URL}/api/auth/register`, formData);
+
+      toast.success("Registration successful!", {
+        position: "top-right",
+        autoClose: 3000
+      });
 
       console.log(res.data);
 
       setTimeout(() => navigate("/login"), 2000);
-    } catch (err) {
+
+    }
+    catch (err) {
       console.error("Registration error:", err.response?.data || err.message);
 
       // Check if backend says "User already exists"

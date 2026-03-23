@@ -1,3 +1,4 @@
+
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
@@ -10,13 +11,16 @@ const { Server } = require("socket.io");
 // Load environment variables
 dotenv.config();
 
+
 // Create express app
 const app = express();
-
+// 
 // ✅ Allowed Origins
 const allowedOrigins = [
+  "http://localhost:3000",
   "http://localhost:3001",
   "https://treassurefunded.com",
+  
 ];
 
 // ✅ Middleware
